@@ -1,5 +1,19 @@
 # USER FORM
 
+- [USER FORM](#user-form)
+  - [CREATE USER FORM](#create-user-form)
+    - [INITIALIZATION](#initialization)
+    - [CREATE A LIST FROM A RANGE IN A WORKSHEET](#create-a-list-from-a-range-in-a-worksheet)
+    - [COMBO BOX](#combo-box)
+    - [COMMAND BUTTON](#command-button)
+  - [HOW TO CALL A USER FORM](#how-to-call-a-user-form)
+    - [CALL FROM A COMMAND IN THE EXCEL FILE](#call-from-a-command-in-the-excel-file)
+  - [OPEN USER FORM WHEN OPEN THE EXCEL FILE](#open-user-form-when-open-the-excel-file)
+  - [WHAT TO DO WHEN CLOSE A USER FORM](#what-to-do-when-close-a-user-form)
+  - [MAKE THE EXCEL APPLICATION VISIBLE BY A COMMAND BUTTON AND PSW](#make-the-excel-application-visible-by-a-command-button-and-psw)
+
+---
+
 ## CREATE USER FORM
 
 In Macro Excel, click on "Insert" --> "UserForm"

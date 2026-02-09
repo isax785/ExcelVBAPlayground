@@ -1,12 +1,13 @@
-# Excel Toolbox
+# Excel - Various Examples
 
-## `VLOOKUP` 
+- [Excel - Various Examples](#excel---various-examples)
+- [Split Strings](#split-strings)
+- [Quadratic Regression](#quadratic-regression)
+- [Add Arrow Inside a Cell](#add-arrow-inside-a-cell)
 
-```excel
-=VLOOKUP(B93,$C$2:$C$254,1,FALSE)
-```
+---
 
-## Split Strings
+# Split Strings
 
 [Source](https://www.ablebits.com/office-addins-blog/split-text-string-excel/)
 
@@ -34,7 +35,7 @@ To extract the **size** (all characters after the 3rd hyphen), enter the follo
  
 In a similar fashion, you can split column by any other character. All you have to do is to replace "-" with the required delimiter, for example **space** (" "), **comma** (","), **slash** ("/"), **colon** (";"), **semicolon** (";"), and so on.
 
-## Quadratic Regression
+# Quadratic Regression
 
 `=LINEST(AG8:AG16,AK8:AK16^{1,2},1,1)`
 

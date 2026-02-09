@@ -2,7 +2,7 @@
 
 A VBA macro that exports all sheets of an Excel file to separate CSV files, with a user-defined separator. The macro will prompt the user to input the desired separator and will then save each sheet as a CSV file with the given separator.
 
-```vba
+```vb
 Sub ExportAllSheetsToCSV()
     Dim ws As Worksheet
     Dim csvFileName As String

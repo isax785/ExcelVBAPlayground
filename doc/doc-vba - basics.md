@@ -1,98 +1,75 @@
-# VBA - notes
+# VBA - Basics
 
-- [[#References|References]]
-	- [[#References#Save|Save]]
-	- [[#References#DLL|DLL]]
-- [[#Basis|Basis]]
-	- [[#Basis#Variables|Variables]]
-		- [[#Variables#Data Types|Data Types]]
-		- [[#Variables#Option Explicit|Option Explicit]]
-		- [[#Variables#Procedure (local) scope|Procedure (local) scope]]
-		- [[#Variables#Module scope|Module scope]]
-		- [[#Variables#Public scope|Public scope]]
-		- [[#Variables#Declare and manage|Declare and manage]]
-- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)|[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Types of VBA Arrays|Types of VBA Arrays]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Declaring an Array|Declaring an Array]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Assigning Values to an Array|Assigning Values to an Array]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Get the Array Size|Get the Array Size]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Using the Array and Split function|Using the Array and Split function]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Using Loops With Arrays|Using Loops With Arrays]]
-		- [[#Using Loops With Arrays#Using the For Each Loop|Using the For Each Loop]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Using Erase|Using Erase]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#ReDim with Preserve|ReDim with Preserve]]
-		- [[#ReDim with Preserve#Using Preserve with 2 Dimensional Arrays|Using Preserve with 2 Dimensional Arrays]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Sorting an Array|Sorting an Array]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Passing an Array to a Sub or Function|Passing an Array to a Sub or Function]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Returning an Array from a Function|Returning an Array from a Function]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Two Dimensional Arrays|Two Dimensional Arrays]]
-		- [[#Two Dimensional Arrays#Using the For Each Loop|Using the For Each Loop]]
-	- [[#[What are Arrays and Why do You Need Them?](https://excelmacromastery.com/excel-vba-array/)#Reading from a Range of Cells to an Array|Reading from a Range of Cells to an Array]]
-- [[#[vba - A Quick Guide to VBA Arrays]( https://excelmacromastery.com/excel-vba-array/ )|[vba - A Quick Guide to VBA Arrays]( https://excelmacromastery.com/excel-vba-array/ )]]
-- [[#How To Make Your Macros Run at Super Speed|How To Make Your Macros Run at Super Speed]]
-	- [[#How To Make Your Macros Run at Super Speed#Conclusion|Conclusion]]
-- [[#Scripting|Scripting]]
-	- [[#Scripting#Sheets|Sheets]]
-	- [[#Scripting#Cells|Cells]]
-		- [[#Cells#Relative reference notations|Relative reference notations]]
-	- [[#Scripting#[Arrays](https://excelmacromastery.com/excel-vba-array/)|[Arrays](https://excelmacromastery.com/excel-vba-array/)]]
-		- [[#[Arrays](https://excelmacromastery.com/excel-vba-array/)#1D|1D]]
-		- [[#[Arrays](https://excelmacromastery.com/excel-vba-array/)#2D|2D]]
-		- [[#[Arrays](https://excelmacromastery.com/excel-vba-array/)#Dynamic|Dynamic]]
-		- [[#[Arrays](https://excelmacromastery.com/excel-vba-array/)#Loops|Loops]]
-		- [[#[Arrays](https://excelmacromastery.com/excel-vba-array/)#Erase|Erase]]
-	- [[#Scripting#User-Defined VBA Function & Sub Procedures|User-Defined VBA Function & Sub Procedures]]
-		- [[#User-Defined VBA Function & Sub Procedures#Arguments|Arguments]]
-		- [[#User-Defined VBA Function & Sub Procedures#VBA Function Procedures|VBA Function Procedures]]
-		- [[#User-Defined VBA Function & Sub Procedures#Calling VBA Function Procedures|Calling VBA Function Procedures]]
-		- [[#User-Defined VBA Function & Sub Procedures#VBA Sub Procedures|VBA Sub Procedures]]
-		- [[#User-Defined VBA Function & Sub Procedures#Calling Excel VBA Sub Procedures|Calling Excel VBA Sub Procedures]]
-		- [[#User-Defined VBA Function & Sub Procedures#Scope of VBA Procedures|Scope of VBA Procedures]]
-		- [[#User-Defined VBA Function & Sub Procedures#Early Exit From VBA Function & Sub Procedures|Early Exit From VBA Function & Sub Procedures]]
-		- [[#User-Defined VBA Function & Sub Procedures#Differences|Differences]]
-	- [[#Scripting#Named Ranges|Named Ranges]]
-- [[#vba - VBA On Error Statement|vba - VBA On Error Statement]]
-	- [[#vba - VBA On Error Statement#**Definition of VBA On Error Statement:**|**Definition of VBA On Error Statement:**]]
-	- [[#vba - VBA On Error Statement#**Syntax of On Error Statement:**|**Syntax of On Error Statement:**]]
-		- [[#**Syntax of On Error Statement:**#**1. On Error Goto 0**|**1. On Error Goto 0**]]
-		- [[#**Syntax of On Error Statement:**#**2. On Error Resume Next**|**2. On Error Resume Next**]]
-		- [[#**Syntax of On Error Statement:**#3. On Error Goto _label_:|3. On Error Goto _label_:]]
-- [[#VBA Shell Syntax|VBA Shell Syntax]]
-	- [[#VBA Shell Syntax#Examples of Using Shell|Examples of Using Shell]]
-		- [[#Examples of Using Shell#External Commands|External Commands]]
-		- [[#Examples of Using Shell#Internal Commands|Internal Commands]]
-	- [[#VBA Shell Syntax#Asynchronous Execution|Asynchronous Execution]]
-	- [[#VBA Shell Syntax#Error handling|Error handling]]
-- [[#[Timebombing A Workbook](http://www.cpearson.com/excel/workbooktimebomb.aspx)|[Timebombing A Workbook](http://www.cpearson.com/excel/workbooktimebomb.aspx)]]
-	- [[#[Timebombing A Workbook](http://www.cpearson.com/excel/workbooktimebomb.aspx)#Introduction|Introduction]]
-	- [[#[Timebombing A Workbook](http://www.cpearson.com/excel/workbooktimebomb.aspx)#TimeBomb With A Defined Name|TimeBomb With A Defined Name]]
-	- [[#[Timebombing A Workbook](http://www.cpearson.com/excel/workbooktimebomb.aspx)#TimeBomb With Suicide|TimeBomb With Suicide]]
-	- [[#[Timebombing A Workbook](http://www.cpearson.com/excel/workbooktimebomb.aspx)#TimeBomb To Read-Only|TimeBomb To Read-Only]]
-	- [[#[Timebombing A Workbook](http://www.cpearson.com/excel/workbooktimebomb.aspx)#TimeBomb With Registry|TimeBomb With Registry]]
-	- [[#[Timebombing A Workbook](http://www.cpearson.com/excel/workbooktimebomb.aspx)#Making The Code Run At Open|Making The Code Run At Open]]
+- [VBA - Basics](#vba---basics)
+  - [Variables](#variables)
+    - [Data Types](#data-types)
+    - [Option Explicit](#option-explicit)
+    - [Procedure (local) scope](#procedure-local-scope)
+    - [Module scope](#module-scope)
+    - [Public scope](#public-scope)
+    - [Declare and manage](#declare-and-manage)
+- [What are Arrays and Why do You Need Them?](#what-are-arrays-and-why-do-you-need-them)
+  - [Types of VBA Arrays](#types-of-vba-arrays)
+  - [Declaring an Array](#declaring-an-array)
+  - [Assigning Values to an Array](#assigning-values-to-an-array)
+  - [Get the Array Size](#get-the-array-size)
+  - [Using the Array and Split function](#using-the-array-and-split-function)
+  - [Using Loops With Arrays](#using-loops-with-arrays)
+    - [Using the For Each Loop](#using-the-for-each-loop)
+  - [Using Erase](#using-erase)
+  - [ReDim with Preserve](#redim-with-preserve)
+    - [Using Preserve with 2 Dimensional Arrays](#using-preserve-with-2-dimensional-arrays)
+  - [Sorting an Array](#sorting-an-array)
+  - [Passing an Array to a Sub or Function](#passing-an-array-to-a-sub-or-function)
+  - [Returning an Array from a Function](#returning-an-array-from-a-function)
+  - [Two Dimensional Arrays](#two-dimensional-arrays)
+    - [Using the For Each Loop](#using-the-for-each-loop-1)
+  - [Reading from a Range of Cells to an Array](#reading-from-a-range-of-cells-to-an-array)
+- [vba - A Quick Guide to VBA Arrays](#vba---a-quick-guide-to-vba-arrays)
+- [How To Make Your Macros Run at Super Speed](#how-to-make-your-macros-run-at-super-speed)
+  - [Conclusion](#conclusion)
+- [Scripting](#scripting)
+  - [Sheets](#sheets)
+  - [Cells](#cells)
+    - [Relative reference notations](#relative-reference-notations)
+  - [Arrays](#arrays)
+    - [1D](#1d)
+    - [2D](#2d)
+    - [Dynamic](#dynamic)
+    - [Loops](#loops)
+    - [Erase](#erase)
+  - [User-Defined VBA Function \& Sub Procedures](#user-defined-vba-function--sub-procedures)
+    - [Arguments](#arguments)
+    - [VBA Function Procedures](#vba-function-procedures)
+    - [Calling VBA Function Procedures](#calling-vba-function-procedures)
+    - [VBA Sub Procedures](#vba-sub-procedures)
+    - [Calling Excel VBA Sub Procedures](#calling-excel-vba-sub-procedures)
+    - [Scope of VBA Procedures](#scope-of-vba-procedures)
+    - [Early Exit From VBA Function \& Sub Procedures](#early-exit-from-vba-function--sub-procedures)
+    - [Differences](#differences)
+  - [Named Ranges](#named-ranges)
+- [vba - VBA On Error Statement](#vba---vba-on-error-statement)
+  - [**Definition of VBA On Error Statement:**](#definition-of-vba-on-error-statement)
+  - [**Syntax of On Error Statement:**](#syntax-of-on-error-statement)
+    - [**1. On Error Goto 0**](#1-on-error-goto-0)
+    - [**2. On Error Resume Next**](#2-on-error-resume-next)
+    - [3. On Error Goto _label_:](#3-on-error-goto-label)
+- [VBA Shell Syntax](#vba-shell-syntax)
+  - [Examples of Using Shell](#examples-of-using-shell)
+    - [External Commands](#external-commands)
+    - [Internal Commands](#internal-commands)
+  - [Asynchronous Execution](#asynchronous-execution)
+  - [Error handling](#error-handling)
+- [Timebombing A Workbook](#timebombing-a-workbook)
+  - [Introduction](#introduction)
+  - [TimeBomb With A Defined Name](#timebomb-with-a-defined-name)
+  - [TimeBomb With Suicide](#timebomb-with-suicide)
+  - [TimeBomb To Read-Only](#timebomb-to-read-only)
+  - [TimeBomb With Registry](#timebomb-with-registry)
+  - [Making The Code Run At Open](#making-the-code-run-at-open)
 
 ---
 
-# References
-
-- `Microsoft Documentation` https://docs.microsoft.com/en-us/office/vba/api/overview/
-- http://www.cpearson.com/excel/mainpage.aspx
-  -  http://www.cpearson.com/Excel/Topic.aspx 
-- https://www.thespreadsheetguru.com/
-
-## Save
-
--  https://docs.microsoft.com/en-us/office/vba/api/excel.workbook.save 
-
-## DLL
-
-- https://sites.google.com/site/jrlhost/links/excelcdll 
-- https://docs.microsoft.com/en-us/cpp/cpp/using-dllimport-and-dllexport-in-cpp-classes?view=vs-2019 
-- https://aandreasen.wordpress.com/2008/05/05/how-to-create-a-dll-for-ms-excel-vba-with-microsoft-visual-c-2008-command-line-tools/ 
-- http://www.excelforum.com/ 
-- https://www.mrexcel.com/ 
-
-# Basis
 
 ## Variables
 

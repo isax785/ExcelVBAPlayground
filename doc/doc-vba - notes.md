@@ -1,56 +1,56 @@
-# VBA - Toolbox
+# VBA - Notes
 
-- [[#VBA - Toolbox|VBA - Toolbox]]
-- [[#Variables|Variables]]
-	- [[#Variables#Arrays|Arrays]]
-		- [[#Arrays#Jagged Array|Jagged Array]]
-	- [[#Variables#Comments|Comments]]
-- [[#Sheet|Sheet]]
-- [[#Ranges and Cells|Ranges and Cells]]
-	- [[#Ranges and Cells#Ranges vs. Cells|Ranges vs. Cells]]
-	- [[#Ranges and Cells#Formula R1C1|Formula R1C1]]
-	- [[#Ranges and Cells#Copy and Paste|Copy and Paste]]
-	- [[#Ranges and Cells#Delete Row of a Selected Cell|Delete Row of a Selected Cell]]
-- [[#Loops and Conditional|Loops and Conditional]]
-	- [[#Loops and Conditional#_For_ Loop|_For_ Loop]]
-	- [[#Loops and Conditional#_While_ Loop|_While_ Loop]]
-	- [[#Loops and Conditional#_Do_ Loop|_Do_ Loop]]
-	- [[#Loops and Conditional#[*If Else*]( https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/statements/if-then-else-statement)|[*If Else*]( https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/statements/if-then-else-statement)]]
-	- [[#Loops and Conditional#*With*|*With*]]
-	- [[#Loops and Conditional#Useful Checks|Useful Checks]]
-- [[#Names|Names]]
-- [[#Sub and Functions|Sub and Functions]]
-	- [[#Sub and Functions#[Function](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/function-statement)|[Function](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/function-statement)]]
-	- [[#Sub and Functions#[Sub](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/sub-statement)|[Sub](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/sub-statement)]]
-	- [[#Sub and Functions#Calling Sub and Function procedures|Calling Sub and Function procedures]]
-	- [[#Sub and Functions#Execute Macro on Cell Change|Execute Macro on Cell Change]]
-- [[#Charts|Charts]]
-	- [[#Charts#[Chart Axis](https://exceloffthegrid.com/chart-axis-min-mix/)|[Chart Axis](https://exceloffthegrid.com/chart-axis-min-mix/)]]
-	- [[#Charts#Chart Range|Chart Range]]
-		- [[#Chart Range#Dynamic Range Cahnge without VBA|Dynamic Range Cahnge without VBA]]
-- [[#Debug|Debug]]
-	- [[#Debug#Immediate Window|Immediate Window]]
-	- [[#Debug#MessageBox|MessageBox]]
-	- [[#Debug#Print|Print]]
-- [[#Simulation|Simulation]]
-	- [[#Simulation#Screen Updating|Screen Updating]]
-	- [[#Simulation#Cursor|Cursor]]
-	- [[#Simulation#Progress Bar|Progress Bar]]
-	- [[#Simulation#Sub|Sub]]
-	- [[#Simulation#Interrupt a Sub|Interrupt a Sub]]
-- [[#Error Handling|Error Handling]]
-- [[#Best Practice|Best Practice]]
-	- [[#Best Practice#Selection position|Selection position]]
-- [[#Cookbook|Cookbook]]
-	- [[#Cookbook#Concatenate Range of Cells|Concatenate Range of Cells]]
-	- [[#Cookbook#Hexadecimal to VBA Color|Hexadecimal to VBA Color]]
-	- [[#Cookbook#Goal Seek|Goal Seek]]
-	- [[#Cookbook#Copy-Paste Results on Table|Copy-Paste Results on Table]]
-	- [[#Cookbook#Select Range and Cycle on It|Select Range and Cycle on It]]
-	- [[#Cookbook#Delete Rows|Delete Rows]]
-	- [[#Cookbook#Progress Bar|Progress Bar]]
-	- [[#Cookbook#Select Cells and Highlight Cells on Another Column|Select Cells and Highlight Cells on Another Column]]
-- [[#References|References]]
+- [VBA - Notes](#vba---notes)
+- [Variables](#variables)
+  - [Arrays](#arrays)
+    - [Jagged Array](#jagged-array)
+  - [Comments](#comments)
+- [Sheet](#sheet)
+- [Ranges and Cells](#ranges-and-cells)
+  - [Ranges vs. Cells](#ranges-vs-cells)
+  - [Formula R1C1](#formula-r1c1)
+  - [Copy and Paste](#copy-and-paste)
+  - [Delete Row of a Selected Cell](#delete-row-of-a-selected-cell)
+- [Loops and Conditional](#loops-and-conditional)
+  - [_For_ Loop](#for-loop)
+  - [_While_ Loop](#while-loop)
+  - [_Do_ Loop](#do-loop)
+  - [*If Else*](#if-else)
+  - [*With*](#with)
+  - [Useful Checks](#useful-checks)
+- [Names](#names)
+- [Sub and Functions](#sub-and-functions)
+  - [Function](#function)
+  - [Sub](#sub)
+  - [Calling Sub and Function procedures](#calling-sub-and-function-procedures)
+  - [Execute Macro on Cell Change](#execute-macro-on-cell-change)
+- [Charts](#charts)
+  - [Chart Axis](#chart-axis)
+  - [Chart Range](#chart-range)
+    - [Dynamic Range Cahnge without VBA](#dynamic-range-cahnge-without-vba)
+- [Debug](#debug)
+  - [Immediate Window](#immediate-window)
+  - [MessageBox](#messagebox)
+  - [Print](#print)
+- [Simulation](#simulation)
+  - [Screen Updating](#screen-updating)
+  - [Cursor](#cursor)
+  - [Progress Bar](#progress-bar)
+  - [Sub](#sub-1)
+  - [Interrupt a Sub](#interrupt-a-sub)
+- [Error Handling](#error-handling)
+- [Best Practice](#best-practice)
+  - [Selection position](#selection-position)
+- [Cookbook](#cookbook)
+  - [Concatenate Range of Cells](#concatenate-range-of-cells)
+  - [Hexadecimal to VBA Color](#hexadecimal-to-vba-color)
+  - [Goal Seek](#goal-seek)
+  - [Copy-Paste Results on Table](#copy-paste-results-on-table)
+  - [Select Range and Cycle on It](#select-range-and-cycle-on-it)
+  - [Delete Rows](#delete-rows)
+  - [Progress Bar](#progress-bar-1)
+  - [Select Cells and Highlight Cells on Another Column](#select-cells-and-highlight-cells-on-another-column)
+- [References](#references)
 
 ---
 

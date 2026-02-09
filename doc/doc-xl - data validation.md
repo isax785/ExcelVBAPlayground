@@ -1,42 +1,24 @@
 # Data Validation Tips and Quirks
 
-[toc]
+Tips for solving problems with drop down lists, and workarounds for data validation limitations, such as small font, and narrow lists:
 
-Tips for solving problems with drop down lists, and workarounds for data validation limitations, such as small font, and narrow lists
-
-[Refer to a Source List on a Different Worksheet](https://www.contextures.com/xlDataVal08.html#Refer) 
-
-[Use Dynamic Lists](https://www.contextures.com/xlDataVal08.html#Dynamic)
-
-[Item Limit in Drop Down List](https://www.contextures.com/xlDataVal08.html#itemlimit)
-
-[Drop Down List Opens With Blank Selected](https://www.contextures.com/xlDataVal08.html#blankcell)
-
-[Video: Dynamic Range](https://www.contextures.com/xlDataVal08.html#videodynamic)
-
+- [Refer to a Source List on a Different Worksheet](https://www.contextures.com/xlDataVal08.html#Refer) 
+- [Use Dynamic Lists](https://www.contextures.com/xlDataVal08.html#Dynamic)
+- [Item Limit in Drop Down List](https://www.contextures.com/xlDataVal08.html#itemlimit)
+- [Drop Down List Opens With Blank Selected](https://www.contextures.com/xlDataVal08.html#blankcell)
+- [Video: Dynamic Range](https://www.contextures.com/xlDataVal08.html#videodynamic)
 [Data Validation Font Size and List Length](https://www.contextures.com/xlDataVal08.html#Font)
-
-[Data Validation List With Symbols](https://www.contextures.com/xlDataVal08.html#symbols)
-
-[Scroll Through a Drop Down List](https://www.contextures.com/xlDataVal08.html#scroll)
-
-[Data Validation Dropdowns and Change Events](https://www.contextures.com/xlDataVal08.html#Change)
-
-[Missing Arrows](https://www.contextures.com/xlDataVal08.html#ArrowsNotVisible) 
-
-[Valid Entries Not Allowed](https://www.contextures.com/xlDataVal08.html#valid)
-
-[Invalid Entries are Allowed](https://www.contextures.com/xlDataVal08.html#Invalid) 
-
-   -- [Video: Ignore Blank in Data Validation](https://www.contextures.com/xlDataVal08.html#videoignore)
-
-[Data Validation on a Protected Sheet](https://www.contextures.com/xlDataVal08.html#Protect) 
-
-[Data Validation Dropdowns are Too Wide](https://www.contextures.com/xlDataValWidth.html)  
-
-[Make the Dropdown List Temporarily Wider](https://www.contextures.com/xlDataVal08.html#Wider)
-
-[Make the Dropdown List Appear Larger](https://www.contextures.com/xlDataVal08.html#Larger)
+- [Data Validation List With Symbols](https://www.contextures.com/xlDataVal08.html#symbols)
+- [Scroll Through a Drop Down List](https://www.contextures.com/xlDataVal08.html#scroll)
+- [Data Validation Dropdowns and Change Events](https://www.contextures.com/xlDataVal08.html#Change)
+- [Missing Arrows](https://www.contextures.com/xlDataVal08.html#ArrowsNotVisible) 
+- [Valid Entries Not Allowed](https://www.contextures.com/xlDataVal08.html#valid)
+- [Invalid Entries are Allowed](https://www.contextures.com/xlDataVal08.html#Invalid) 
+  - [Video: Ignore Blank in Data Validation](https://www.contextures.com/xlDataVal08.html#videoignore)
+- [Data Validation on a Protected Sheet](https://www.contextures.com/xlDataVal08.html#Protect) 
+- [Data Validation Dropdowns are Too Wide](https://www.contextures.com/xlDataValWidth.html)  
+- [Make the Dropdown List Temporarily Wider](https://www.contextures.com/xlDataVal08.html#Wider)
+- [Make the Dropdown List Appear Larger](https://www.contextures.com/xlDataVal08.html#Larger)
 
 ## Introduction
 
