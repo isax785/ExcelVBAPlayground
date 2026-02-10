@@ -4,18 +4,18 @@ A playground focused on application to the engineering tasks in the everydai wor
 
 The main goal is to speed-up and reduce the effort of implementations.
 
-Fields this repo is focused on:
+**Fields** this repo is focused on:
 
-- `Excel`:
-- `Excel+VBA`:
-- `UserForm`:
+- `Excel`: formula, array formula, and other functionalities;
+- `Excel+VBA`: automation by VBA scripting;
+- `UserForm`: GUIs implementation integrating both spreadsheet and VBA functionalities.
 
-Contents for each field:
+**Contents** for each field:
 
-- **example**: complete implementations applied to real cases, ready to use;
-- **playground**: implementations for practicing;
-- **documentation**: extensive dissertation of a specific topic;
-- **toolbox**: *quick reference* (cheatsheet style) with reference tables and compact snippets.
+- *example*: complete implementations applied to real cases, ready to use;
+- *playground*: implementations for practicing;
+- *documentation*: extensive dissertation of a specific topic;
+- *toolbox*: quick reference (cheatsheet style) with reference tables and compact snippets.
 
 ## File Naming
 
@@ -43,4 +43,4 @@ Prefixes are built by combinating the identifiers mentioned.
 
 | Action                                 | Code                                  |
 | ---                                    | ---                                   |
-|                                        |                                       |
+| some action here                       | `code`                                |

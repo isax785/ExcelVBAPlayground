@@ -462,7 +462,7 @@ Do
         	Exit Do
         End If
     End If
-	Loop Until Abs(Range(seek_1) - Range(goal_1)) < 0.01 And nrIter <= maxIter
+Loop Until Abs(Range(seek_1) - Range(goal_1)) < 0.01 And nrIter <= maxIter
 ```
 
 ## [*If Else*]( https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/statements/if-then-else-statement)
@@ -478,7 +478,7 @@ If condition [ Then ]
 End If
 
 ' Single-line syntax:
-If condition Then [ statements ] [ Else [ elsestatements ] ]
+If condition Then [ statements ] [ Else [ elsestatements ] ] 
 ```
 
 ## *With*
