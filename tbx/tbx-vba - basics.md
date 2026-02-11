@@ -3,10 +3,16 @@
 - [VBA Basics Toolbox](#vba-basics-toolbox)
 - [Declarations](#declarations)
 - [Ranges and Cells](#ranges-and-cells)
+  - [RC Notation](#rc-notation)
+  - [Formula](#formula)
   - [Selection](#selection)
+  - [Formatting](#formatting)
 - [String Manipulation](#string-manipulation)
 - [Handling Sheets](#handling-sheets)
 - [Loops and Conditionals](#loops-and-conditionals)
+  - [For](#for)
+  - [While](#while)
+  - [If-Else](#if-else)
 
 ---
 
@@ -16,7 +22,7 @@
 | ---                                    | ---                                   |
 | Comments              | `' comments are preceded by an apostrophe`   |
 | **Variables**  |   |
-| ilnline variable declaration and assignment | `Dim [varName] As Integer: [varName] = value` |
+| ilnline variable declaration and assignment | *`Dim [varName] As Integer: [varName] = value`* |
 | multiple types inline decalaration  | `Dim a As Single, b As Integer`  |
 | multiple single type inline declaration   | `Dim a, b, c As Double` |
 | **Arrays**                        |                                 |
@@ -50,13 +56,27 @@
 | cell "named"     | `rng = Range("named")`                |
 | check empty cell | `IsEmpty(Range(...).Value)`           |
 
+## RC Notation
+
+The ActiveCell is B11 Result
+R1C1 A1
+RC B11
+R[1]C B12
+R[-1]C[-1] A10
+=SUM(R2C:R[-1]C) SUM(B2:B10)
+
+## Formula
+
+Worksheets("Sheet1").Range("A5").Formula = "=A4+A10"
+Worksheets("Sheet1").Range("A5").FormulaR1C1 = "=R4C1+R10C1"
+
 ## Selection
 
 Operations to be carried out on **selection**:
 
 | Action                                 | Code                                  |
 | ---                                    | ---                                   |
-| Range selection in the **active** sheet                       | `Range([cellName]).Select`            | 
+| Range selection in the **active** sheet | `Range([cellName]).Select`            | 
 | Range selection from **another** sheet| `Sheets([sheetName]).Range([cellName]).Select` |
 | Sum all the cells             | `Application.WorksheetFunction.Sum(Selection)` |
 | Clear the cell contents                | `Selection.ClearContents`             |
@@ -64,33 +84,24 @@ Operations to be carried out on **selection**:
 | Clear the cell comments                | `Selection.ClearComments`             |
 | Clear the cell color                   | `Selection.Interior.color = xlNone`   |
 | Clear all the cell                     | `Selection.Clear`                     |
+| Select multiple cells        | *`Range(Range([cellName]), Range([cellName]).End([direction])).Select`*`*` |
+|   | *`Range(Range([cellName]), Range([cellName]).Offset([nrRows], [nrCols]))`*    |
+| Select a region                        | `Range([cellName]).CurrentRegion.Select` |
+| Select multiple rows                   | `Rows("2:38").Select`                    | 
+| Select multiple columns                | `Columns("B:D").Select`                  |
+| Hide/show selection row/column | `Selection.EntireRow.Hidden = True 'hide` |
+|                                | `Selection.EntireRow.Hidden = False 'show` |
+|                                | `Selection.EntireColumn.Hidden = True 'hide` |
+|                                | `Selection.EntireColumn.Hidden = False 'show` |
 
+`*`: `[direction]` = `xlUp`, `xlDown`, `xltoLeft`, or `xltoRight`.
 
-The cell format can be set as follows before writing the value in a cell:
+## Formatting
 
-colSum = Format(Application.WorksheetFunction.Sum(Selection), "0.00")
-colSum = Format(Application.WorksheetFunction.Sum(Selection), "0.00%")
+The cell format can be set as follows **before writing the value** in the cell:
 
-
-Select a range of cells by starting from [cellName] and following a direction till the end of the cells with a value: Range(Range([cellName]), Range([cellName]).End([direction])).Select
-
-Where [direction] = xlUp, xlDown, xltoLeft, xltoRight depending on the direction that the selection _ must follow.
-
-Another method is by considering an offset: Range(Range([cellName]), Range([cellName]).Offset([nrRows], [nrCols]))
-
-Select a region: Range([cellName]).CurrentRegion.Select
-
-Select multiple rows/columns: Rows("2:38").Select and Columns("B:D").Select
-
-Hide/show selection row/column:
-
-Selection.EntireRow.Hidden = True 'hide
-
-Selection.EntireRow.Hidden = False 'show
-
-Selection.EntireColumn.Hidden = True 'hide
-
-Selection.EntireColumn.Hidden = False 'show
+- `colSum = Format(Application.WorksheetFunction.Sum(Selection), "0.00")`
+- `colSum = Format(Application.WorksheetFunction.Sum(Selection), "0.00%")`
 
 
 # String Manipulation
@@ -106,6 +117,41 @@ Selection.EntireColumn.Hidden = False 'show
 
 
 # Loops and Conditionals
+
+## For
+
+```vb
+For i = 1 To 6
+...
+Next i
+```
+
+On range of selected cells: 
+```vb
+For Each cell In rng.Cells
+    ...
+Next cell
+
+```
+
+Selected array: `For i = LBound(myArray) To UBound(myArray)`
+
+## With
+
+perform a series of statements on a specified object without requalifying the name of the object. 
+
+
+
+## While
+
+Do While [condition]
+  ...
+Loop
+Do 
+  ...
+Loop While [condition]
+
+## If-Else
 
 ```vb
 ' Multiline syntax:
