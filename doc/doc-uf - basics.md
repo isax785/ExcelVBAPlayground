@@ -1,6 +1,6 @@
-# USER FORM
+# USER FORM - Basics
 
-- [USER FORM](#user-form)
+- [USER FORM - Basics](#user-form---basics)
   - [CREATE USER FORM](#create-user-form)
     - [INITIALIZATION](#initialization)
     - [CREATE A LIST FROM A RANGE IN A WORKSHEET](#create-a-list-from-a-range-in-a-worksheet)
@@ -24,7 +24,7 @@ Insert tools and controls on the interface. Double click on the controls in orde
 
 Actions to do when the UserForm is initialized.
 
-```
+```vb
     Private Sub UserForm_Initialize()
     	...
     End Sub
@@ -33,24 +33,24 @@ Actions to do when the UserForm is initialized.
 
 If range in column:
 
-```
+```vb
     Me.ComboBox1.List = Range("A1:A6").Value  
 ```
 If range in row:
 
-```
+```vb
     Me.ComboBox1.List = Application.Transpose(Range("A1:G1").Value)  
 ```
 
 Other methods:
 
-```
+```vb
     Me.ComboBox1.List = Range(Selection, Selection.End(xlDown)).Value  
 ```
 
 If merged cells in the range:
 
-```
+```vb
     Dim aCell As Range
     ...
     
@@ -62,14 +62,14 @@ If merged cells in the range:
 ```
 ### COMBO BOX   
 
-```
+```vb
     Private Sub ComboBox1_Change()
     ...
     End Sub
 ```
 ### COMMAND BUTTON  
 
-```
+```vb
     Private Sub CommandButton1_Click()
     ...
     End Sub
@@ -83,7 +83,7 @@ In a worksheet, "Develop" --> "Insert" --> ActiveX Controls --> Command Button
 
 Double click on the Button.
 
-```
+```vb
     Private Sub StartConversion_Click()
     	UserForm1.Show
     End Sub
@@ -92,7 +92,7 @@ Double click on the Button.
 
 Also, to hide the excel application.
 
-```
+```vb
     Private Sub Workbook_open()
     	Application.Visible = False
     	UserForm1.Show
@@ -104,7 +104,7 @@ Make the excel application visible, close the workbook, ...
 
 Example: close the workbook if the excel application is not visible (general case of generic user, not administrator).
 
-```
+```vb
     Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
         If Application.Visible = False Then
             Workbooks.Close
@@ -114,7 +114,7 @@ Example: close the workbook if the excel application is not visible (general cas
 
 ## MAKE THE EXCEL APPLICATION VISIBLE BY A COMMAND BUTTON AND PSW
 
-```
+```vb
     Private Sub CommandButton2_Click()
     Dim inp As String
     psw = "password"
