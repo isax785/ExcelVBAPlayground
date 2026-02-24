@@ -11,6 +11,7 @@
 - [Handling Sheets](#handling-sheets)
 - [Loops and Conditionals](#loops-and-conditionals)
   - [For](#for)
+  - [With](#with)
   - [While](#while)
   - [If-Else](#if-else)
 
