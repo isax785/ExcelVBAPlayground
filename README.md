@@ -19,7 +19,7 @@ The main goal is to speed-up and reduce the effort of implementations.
 
 ## File Naming
 
-Files are named by well-defined prefixes to ease the search of the requested file and the identification of the field it applies to.
+Files are named by well-defined prefixes to ease the search of the requested file and the identification of the field it applies to:
 
 | Field       | Identifier |
 | ---         | ---        |
@@ -27,14 +27,15 @@ Files are named by well-defined prefixes to ease the search of the requested fil
 | `Excel+VBA` | `vba`      |
 | `UserForm`  | `uf`       |
 
-Also filetypes have dedicated prefixes:
+Also filetypes have dedicated prefixes depending on the field of application:
 
 | Filetype                                  | Identifier |
 | ---                                       | ---        |
-| Document focusing on a specific topic     | `doc`      |
-| Toolbox                                   | `tbx`      |
-| Playground file                           | `plg`      |
 | Example                                   | `ex`       |
+| Course                                    | `c`        |
+| Document focusing on a specific topic     | `doc`      |
+| Playground file                           | `plg`      |
+| Toolbox                                   | `tbx`      |
 
 Prefixes are built by combinating the identifiers mentioned.
 

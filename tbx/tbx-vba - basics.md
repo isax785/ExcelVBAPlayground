@@ -4,6 +4,7 @@
 - [Declarations](#declarations)
 - [Ranges and Cells](#ranges-and-cells)
   - [RC Notation](#rc-notation)
+  - [Names](#names)
   - [Formula](#formula)
   - [Selection](#selection)
   - [Formatting](#formatting)
@@ -14,6 +15,7 @@
   - [With](#with)
   - [While](#while)
   - [If-Else](#if-else)
+- [Error Handling](#error-handling)
 
 ---
 
@@ -59,17 +61,27 @@
 
 ## RC Notation
 
-The ActiveCell is B11 Result
-R1C1 A1
-RC B11
-R[1]C B12
-R[-1]C[-1] A10
-=SUM(R2C:R[-1]C) SUM(B2:B10)
+To be used instead of the standard cell notation with explicit row-column naming:
+
+| The `ActiveCell` is `B11` | Result |
+|---|---|
+| `R1C1` | `A1` |
+| `RC` | `B11` |
+| `R[1]C` | `B12` |
+| `R[-1]C[-1]` | `A10` |
+| `=SUM(R2C:R[-1]C)` | `SUM(B2:B10)` |
+
+## Names
+
+Use cell names inside the macro: after the name has been assigned to the cell, refer to it with `Range([name])`.
 
 ## Formula
 
-Worksheets("Sheet1").Range("A5").Formula = "=A4+A10"
-Worksheets("Sheet1").Range("A5").FormulaR1C1 = "=R4C1+R10C1"
+Write formula with:
+- **standard notation**: `Worksheets("Sheet1").Range("A5").Formula = "=A4+A10"`
+- **RC notation**: `Worksheets("Sheet1").Range("A5").FormulaR1C1 = "=R4C1+R10C1"`
+
+Note: `"=A4+A10"` and `"=R4C1+R10C1"` are the same cell references.
 
 ## Selection
 
@@ -121,49 +133,57 @@ The cell format can be set as follows **before writing the value** in the cell:
 
 ## For
 
-```vb
-For i = 1 To 6
-...
-Next i
-```
+Standard: `For i = 1 To 6 ... Next i`
 
-On range of selected cells: 
-```vb
-For Each cell In rng.Cells
-    ...
-Next cell
-
-```
+On range of selected cells: `For Each cell In rng.Cells ... Next cell`
 
 Selected array: `For i = LBound(myArray) To UBound(myArray)`
 
 ## With
 
-perform a series of statements on a specified object without requalifying the name of the object. 
+Perform a series of statements **on a specified object** without requalifying the name of the object. 
 
-
+```vb
+With [object]
+  .[property] = [val]
+  .[action]
+End With
+```
 
 ## While
 
-Do While [condition]
-  ...
-Loop
-Do 
-  ...
-Loop While [condition]
+Two `while` loop statements that differ on when the condition is checked:
+
+- `Do While [condition] ... Loop`: checked at the beginning, the loop starts only if the condition is respected.
+- `Do ... Loop While [condition]`: checked at the end, the loop always starts (at least one iteration is completed).
+
 
 ## If-Else
 
-```vb
-' Multiline syntax:
-If condition [ Then ]
-    [ statements ]
-[ ElseIf elseifcondition [ Then ]
-    [ elseifstatements ] ]
-[ Else
-    [ elsestatements ] ]
-End If
+Standard: `If [condition] Then ... ElseIf [condition] Then ... Else ... End If`
 
-' Single-line syntax:
-If condition Then [ statements ] [ Else [ elsestatements ] ] 
+Single-line syntax: `If [condition] Then ... Else ... ]`
+
+
+# Error Handling
+
+| Action                                                              | Code                      |
+| ------------------------------------------------------------        | -----------------------   |
+| Switcher off error handling (until next _On Error_ statement)       | `On Error ()`             |
+| Execution continues with the line following the error line          | `On Error Resume Next`    |
+| Execution jumps to line starting with the specified label (+ colon) | `On Error GoTo [myLabel]` |
+| Execution resumes with the statement that caused the error          | `Resume`                  |
+| Execution resumes with the line following the error line            | `Resume Next`             |
+| Execution resumes at the line starting with a specified label       | `Resume [myLabel]`        |
+
+Example of a general error handler:
+
+```vb
+Sub AnySub()
+	On Error GoTo ErrTrap
+	....
+	Exit Sub
+	ErrTrap:
+        MsgBox "Error Message"
+End Sub
 ```

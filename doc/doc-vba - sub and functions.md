@@ -1,10 +1,10 @@
 # Sub and Functions
 
 - [Sub and Functions](#sub-and-functions)
-  - [Functions](#functions)
-  - [Subs](#subs)
-  - [Calling Sub and Function procedures](#calling-sub-and-function-procedures)
-  - [Execute Macro on Cell Change](#execute-macro-on-cell-change)
+	- [Functions](#functions)
+	- [Subs](#subs)
+	- [Calling Sub and Function procedures](#calling-sub-and-function-procedures)
+	- [Execute Macro on Cell Change](#execute-macro-on-cell-change)
 
 ---
 
@@ -71,8 +71,6 @@ You call a **Function** procedure by using the function name, followed by the ar
 To return a value from a function, assign the value to the function name. Any number of such assignments can appear anywhere within the procedure. If no value is assigned to *name*, the procedure returns a default value: a numeric function returns 0, a string function returns a zero-length string (""), and a **Variant** function returns [Empty](https://docs.microsoft.com/en-us/office/vba/language/glossary/vbe-glossary#empty). A function that returns an object reference returns **Nothing** if no object reference is assigned to *name* (using **Set**) within the **Function**.
 
 The following example shows how to assign a return value to a function. In this case, **False** is assigned to the name to indicate that some value was not found.
-
-VBCopy
 
 ```vb
 Function BinarySearch(. . .) As Boolean 
@@ -164,7 +162,7 @@ End Function
 
 The *arglist* argument has the following syntax and parts:
 
-[ **Optional** ] [ **ByVal** | **ByRef** ] [ **ParamArray** ] *varname* [ ( ) ] [ **As** *type* ] [ **=** *defaultvalue* ]
+> [ **Optional** ] [ **ByVal** | **ByRef** ] [ **ParamArray** ] *varname* [ ( ) ] [ **As** *type* ] [ **=** *defaultvalue* ]
 
 | Part           | Description                                                  |
 | :------------- | :----------------------------------------------------------- |
