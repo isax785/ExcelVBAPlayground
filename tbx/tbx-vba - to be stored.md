@@ -60,7 +60,7 @@
 | Offset (`[row]` and `[col]` are incremental values) | `Range(...).Offset([row], [col])`     |
 | Get address -> `str`                   | *`[range].Address`*                   |
 | Select region | `Range(...).CurrentRegion`  |
-| Region row and column count -> `int` | `.CurrentRegion.Rows.Count` `.CurrentRegion.Columns.Count`  |
+| Region row and column count -> `in  t` | `.CurrentRegion.Rows.Count` `.CurrentRegion.Columns.Count`  |
 | Clear the region | `.CurrentRegion.Delete` | 
 | Access to cell value with coordinates | *`Cells([row], [col])`*  |
 
