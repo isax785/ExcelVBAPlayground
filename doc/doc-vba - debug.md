@@ -1,5 +1,11 @@
 # Debug
 
+- [Debug](#debug)
+  - [Immediate Window](#immediate-window)
+  - [MessageBox](#messagebox)
+  - [Print](#print)
+
+---
 
 
 ## Immediate Window
