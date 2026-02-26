@@ -2,19 +2,19 @@
 
 - [VBA TBX to Be Stored](#vba-tbx-to-be-stored)
 - [Notes](#notes)
-- [Table](#table)
+- [Tables](#tables)
 - [Snippets](#snippets)
   - [`With` Loop](#with-loop)
 
 ---
 
-> From the book `100 Examples...`
+> From the book `100 Excel VBA Simulations`
 
 # Notes
 
-- rows and columns counters start from 1
+- rows and columns counter starts from `1`
 
-# Table
+# Tables
 
 | **General**                            |                                       |
 | ---                                    | ---                                   |
@@ -25,6 +25,7 @@
 | Label placed anywhere within the macro | *`[label]:`*                          |
 | String concatenation (spaces are not automatically inserted) | *`"[string]" & "[string]" * [int]`* |
 | Newline keyword for string             | `vbcr`                                |
+
 | **Types**                              |                                       |
 | Variant: can store anything            | *`Dim [name] as Variant`*             |
 |  |  |
@@ -33,25 +34,25 @@
 | **Messagebox**                         |                                       |
 | ---                                    | ---                                   |
 | Open messagebox                        | *`MsgBox("[message]", [button-set])`* |
-| Messagebox button set                  | `vbOkCancel`, `vbYesNoCancel`|
+| Messagebox button set                  | `vbOkCancel`, `vbYesNoCancel`         |
 | Buttons signals                        | `vbOK`, `vbCancel`, `vbYes`, `vbNo`   |
 | Conditional | *`If MsgBox("[message]", [button-set]) = [signal] Then [action] `* |
 | Get messagebox output | `Dim msg as Variant` `msg = MsgBox(...)`               |
-| oputput cases                          | `Yes` -> `Case 6`                     |
-|                                        | `No` -> `Case 7`                      |
+| oputput cases                          | `Yes`    -> `Case 6`                  |
+|                                        | `No`     -> `Case 7`                  |
 |                                        | `Cancel` -> `Case 2`                  |
 
 | **Declarations**                       |                                       |
 | ---                                    | ---                                   |
-| Inline declarations, single type | *`Dim [varname] as [vartype]`* |
-| Inline declaration and assignment | *`Dim [varname] as [vartype] : [varname] = [value]`* |
-| Inline declarations, multiple types | *`Dim [varname] as [vartype], [varname] as [vartype]`* |
-| Declare and fill array | *`Dim [arrname] as Variant : [arrname] = Array([val], [val], ...)`* |
+| Inline declarations, single type       | *`Dim [varname] as [vartype]`*                         |
+| Inline declaration and assignment      | *`Dim [varname] as [vartype] : [varname] = [value]`*   |
+| Inline declarations, multiple types    | *`Dim [varname] as [vartype], [varname] as [vartype]`* |
+| Declare and fill array    | *`Dim [arrname] as Variant : [arrname] = Array([val], [val], ...)`* |
 |  |  |
 
 | **Formatting**                         |                                       |
 | ---                                    | ---                                   |
-| cell coloring                        | *`.Cell.Interior.ColorIndex = [value]`* |
+| cell coloring                          | *`.Cell.Interior.ColorIndex = [value]`* |
 |  |  |
 |  |  |
 
@@ -59,10 +60,10 @@
 | ---                                    | ---                                   |
 | Offset (`[row]` and `[col]` are incremental values) | `Range(...).Offset([row], [col])`     |
 | Get address -> `str`                   | *`[range].Address`*                   |
-| Select region | `Range(...).CurrentRegion`  |
+| Select region                          | `Range(...).CurrentRegion`            |
 | Region row and column count -> `in  t` | `.CurrentRegion.Rows.Count` `.CurrentRegion.Columns.Count`  |
-| Clear the region | `.CurrentRegion.Delete` | 
-| Access to cell value with coordinates | *`Cells([row], [col])`*  |
+| Clear the region                       | `.CurrentRegion.Delete`               | 
+| Access to cell value with coordinates  | *`Cells([row], [col])`*               |
 
 | **Loops and Conditionals**             |                                       | 
 | ---                                    | ---                                   |

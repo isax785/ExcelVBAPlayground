@@ -6,6 +6,8 @@ Details [here](../doc/doc-vba%20-%20sub%20and%20functions.md).
 > - `Public`
 > - `ByRef`
 
+- [ ] call a sub
+- [ ] calla function
 
 ## Function
 
