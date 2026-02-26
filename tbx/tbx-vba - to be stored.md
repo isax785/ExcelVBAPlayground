@@ -18,6 +18,7 @@
 # Undefined Actions
 
 - `Application.Calculation = xlCalculationManual`
+- `rng.FormulaArray`
 
 # Notes
 
