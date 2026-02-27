@@ -1,4 +1,4 @@
-# Excel General Toolbox
+# Excel Basics Toolbox
 
 
 | Action             | Syntax                                | Example                               |
