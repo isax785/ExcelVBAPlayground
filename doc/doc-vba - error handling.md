@@ -1,30 +1,30 @@
 # Error Handling
 
 - [Error Handling](#error-handling)
-	- [0) Reusable Error Utilities (drop into `modErrorUtils`)](#0-reusable-error-utilities-drop-into-moderrorutils)
-	- [1) Patterns You’ll Reuse Everywhere](#1-patterns-youll-reuse-everywhere)
-		- [1.1 Structured handler with “finally”](#11-structured-handler-with-finally)
-		- [1.2 Guarded “probe” with `Resume Next` (safe only for *expected* failures)](#12-guarded-probe-with-resume-next-safe-only-for-expected-failures)
-		- [1.3 Retry pattern (e.g., transient file locks)](#13-retry-pattern-eg-transient-file-locks)
-		- [1.4 Developer‑only checks](#14-developeronly-checks)
-	- [2) HVAC Hydraulics — Error‑Hardened Examples](#2-hvac-hydraulics--errorhardened-examples)
-		- [2.1 Duct Pressure Drop (with validation \& context)](#21-duct-pressure-drop-with-validation--context)
-		- [2.2 Hydronic Balancing (guard numeric issues)](#22-hydronic-balancing-guard-numeric-issues)
-		- [2.3 Pump Power \& Motor Selection (with bounds and messages)](#23-pump-power--motor-selection-with-bounds-and-messages)
-	- [3) Test Data Consolidation — Error‑Hardened Examples](#3-test-data-consolidation--errorhardened-examples)
-		- [3.1 Import CSV Folder → MASTER (with retry + summary)](#31-import-csv-folder--master-with-retry--summary)
-		- [3.2 Build KPIs (Pivot) — handle caching errors](#32-build-kpis-pivot--handle-caching-errors)
-	- [4) Thermodynamics — Error‑Hardened Examples](#4-thermodynamics--errorhardened-examples)
-		- [4.1 Antoine Utilities (parameter sanity + bracket failure)](#41-antoine-utilities-parameter-sanity--bracket-failure)
-		- [4.2 Heat Exchanger NTU‑ε (guard Cr≈1 and invalid inputs)](#42-heat-exchanger-ntuε-guard-cr1-and-invalid-inputs)
-	- [5) Materials — Error‑Hardened Examples](#5-materials--errorhardened-examples)
-		- [5.1 Von Mises (ensure numeric \& pass/fail labeling)](#51-von-mises-ensure-numeric--passfail-labeling)
-		- [5.2 Beam (validate geometry \& modulus)](#52-beam-validate-geometry--modulus)
-	- [6) Additional Patterns You Might Need](#6-additional-patterns-you-might-need)
-		- [6.1 Safe `.Find` usage (avoids hidden state issues)](#61-safe-find-usage-avoids-hidden-state-issues)
-		- [6.2 Safe array write/read with dimension checks](#62-safe-array-writeread-with-dimension-checks)
-		- [6.3 User‑facing consolidated messages after batch](#63-userfacing-consolidated-messages-after-batch)
-	- [7) How to integrate quickly](#7-how-to-integrate-quickly)
+  - [0) Reusable Error Utilities (drop into `modErrorUtils`)](#0-reusable-error-utilities-drop-into-moderrorutils)
+  - [1) Patterns You’ll Reuse Everywhere](#1-patterns-youll-reuse-everywhere)
+    - [1.1 Structured handler with “finally”](#11-structured-handler-with-finally)
+    - [1.2 Guarded “probe” with `Resume Next` (safe only for *expected* failures)](#12-guarded-probe-with-resume-next-safe-only-for-expected-failures)
+    - [1.3 Retry pattern (e.g., transient file locks)](#13-retry-pattern-eg-transient-file-locks)
+    - [1.4 Developer‑only checks](#14-developeronly-checks)
+  - [2) HVAC Hydraulics — Error‑Hardened Examples](#2-hvac-hydraulics--errorhardened-examples)
+    - [2.1 Duct Pressure Drop (with validation \& context)](#21-duct-pressure-drop-with-validation--context)
+    - [2.2 Hydronic Balancing (guard numeric issues)](#22-hydronic-balancing-guard-numeric-issues)
+    - [2.3 Pump Power \& Motor Selection (with bounds and messages)](#23-pump-power--motor-selection-with-bounds-and-messages)
+  - [3) Test Data Consolidation — Error‑Hardened Examples](#3-test-data-consolidation--errorhardened-examples)
+    - [3.1 Import CSV Folder → MASTER (with retry + summary)](#31-import-csv-folder--master-with-retry--summary)
+    - [3.2 Build KPIs (Pivot) — handle caching errors](#32-build-kpis-pivot--handle-caching-errors)
+  - [4) Thermodynamics — Error‑Hardened Examples](#4-thermodynamics--errorhardened-examples)
+    - [4.1 Antoine Utilities (parameter sanity + bracket failure)](#41-antoine-utilities-parameter-sanity--bracket-failure)
+    - [4.2 Heat Exchanger NTU‑ε (guard Cr≈1 and invalid inputs)](#42-heat-exchanger-ntuε-guard-cr1-and-invalid-inputs)
+  - [5) Materials — Error‑Hardened Examples](#5-materials--errorhardened-examples)
+    - [5.1 Von Mises (ensure numeric \& pass/fail labeling)](#51-von-mises-ensure-numeric--passfail-labeling)
+    - [5.2 Beam (validate geometry \& modulus)](#52-beam-validate-geometry--modulus)
+  - [6) Additional Patterns You Might Need](#6-additional-patterns-you-might-need)
+    - [6.1 Safe `.Find` usage (avoids hidden state issues)](#61-safe-find-usage-avoids-hidden-state-issues)
+    - [6.2 Safe array write/read with dimension checks](#62-safe-array-writeread-with-dimension-checks)
+    - [6.3 User‑facing consolidated messages after batch](#63-userfacing-consolidated-messages-after-batch)
+  - [7) How to integrate quickly](#7-how-to-integrate-quickly)
 
 ---
 
@@ -704,6 +704,3 @@ End Sub
 3.  Ensure required sheets exist (`Config`, `MASTER`, domain sheets).
 4.  Run and inspect the **Log** on problems; messages include **where** and **Err.Number**.
 5.  In development, enable **Immediate Window** (Ctrl+G) and use **breakpoints** and **watches**.
-
-***
-
