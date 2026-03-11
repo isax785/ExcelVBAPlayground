@@ -6,12 +6,19 @@
 - [Tables](#tables)
 - [Snippets](#snippets)
   - [`With` Loop](#with-loop)
-  - [Copy-Paste Range](#copy-paste-range)
-  - [Select Case](#select-case)
-  - [Text File](#text-file)
+  - [Write Text File](#write-text-file)
   - [Dialog for Folder Selection](#dialog-for-folder-selection)
+  - [Search Worksheet or Create It](#search-worksheet-or-create-it)
+  - [Select Case](#select-case)
+  - [Define Function](#define-function)
+  - [Date](#date)
+  - [Ranges](#ranges)
+    - [Copy-Paste Range](#copy-paste-range)
+    - [Set Range From Itself](#set-range-from-itself)
+    - [Set Range from Another Range](#set-range-from-another-range)
   - [Conditional Formatting](#conditional-formatting)
     - [Cell Color](#cell-color)
+    - [Bars](#bars)
   - [Charts](#charts)
     - [Copy-Paste Chart](#copy-paste-chart)
     - [Set Chart](#set-chart)
@@ -38,6 +45,9 @@
 | Round to the lower integer             | `i = Int([value])`                     |
 | Random integer number between 0 and N  | `Int(Rnd * (N+1))`                     |
 | Module -> `int`                        | *`[int] Mod [int]`*                    |
+| Quotient -> `int`        | *`.Formula="=QUOTIENT([numerator], [denominator])"`* |
+| Separator to write code on multiple lines | `_`                                 |
+| Difference operator                    | `<>`                                   |
 
 
 | **Keywords**                           |                                        |
@@ -54,6 +64,7 @@
 | Calculate all open workbooks           | `Calculate`                            |
 | All the spreadsheet cells              | `Cells`                                |
 | Currently active sheet                 | `ActiveSheet`                          |
+| Colors | `vbYellow` `vbWhite` |
 
 
 | **Application**                        |                                       |
@@ -66,6 +77,8 @@
 | Force calculation to "manual" call      | `Application.Calculation = xlCalculationManual `    |
 | Restore calculation to automatic call   | `Application.Calculation = xlCalculationAutomatic ` | 
 | Alerts display/hide           | `Application.DisplayAlerts = True` or `=False` |
+| Cursor to wait/default        | `Application.Cursor = xlWait` or `= xlDefault` |
+| Status bar text                        | *`Application.StatusBar = [str]`*     |
 
 
 | **Declarations**                       |                                       |
@@ -78,20 +91,26 @@
 | Declare array of integers, undefined size | `arr() as Integer`                 |
 | Declare array of `N-M+1` integers      | `Dim arr(M to N) as Integer`          |
 | Declare array of `N-M+1` anything      | `Dim arr(M to N) as Variant`          |
-| Re-declare array to set size (5)       | `ReDim arr(4)`                        |
-| Re-define array size (upper bound only) without changing the contained data | `ReDim Preserve arr(10)` |
+| Resize array to set size (5)           | `ReDim arr(4)`                        |
+| Resize array lower-upper bound         | *`ReDim [arr]([lower] to [upper])`*   |
+|                                        | `ReDim arr(0 to 10)`                  |
+| Resize array size (upper bound only) without changing the contained data | `ReDim Preserve arr(10)` |
 | Array as variant, then fill it         | `Dim arr as Variant : arr = Array(1, 2, 3)` |
+| Array of range addresses | `Dim arr as Variant : arr = Array("E1:F13", "H3:I13")` |
 | Size of 1D array -> `int`              | `UBound(arr)`                         |
 | Size of multidimensional array         | *`UBound([arr], [dim])`*              |
 
 
 | **String Manipulation**                |                                       |
 | ---                                    | ---                                   |
+| String length -> `int`                 | *`Len([str])`*                        |
 | String concatenation (spaces are not automatically inserted) | *`"[string]" & "[string]" * [int]`* |
 | Convert value to string                | *`CStr([val])`*                       |
 | String to upper/lower case             | *`UCase([string])`* / *`LCase([string])`* |
-| Separator to compose strings on multiple lines | `_`                           |
 | Character to integer                   | `CInt(...)`                           |
+| Reverse a string -> `str`              | *`[str_rev] = StrReverse([str])`*     |
+| Left characters                        | *`Left([str], [n_char])`*             |
+| Right characters                       | *`Right([str], [n_char])`*            |
 
 
 | **MessageBox**                         |                                       |
@@ -124,6 +143,7 @@
 | Define a range with cells coordinates  | *`Range(Cells([row], [col]), Cells([row], [col]))`* |
 | Named range                            | *`Range("[name]")`*                   |
 | Write a formula                        | *`Range(...).Formula = "=[formula]"`* | 
+|                   | `Range(...).Formula = "=[formula]" & [strintg/value] & "[formula]` | 
 | *absolute in the sheet*                | `R1C1`                                |
 | *relative to active position*          | `R[-1]C[1]`  (1 row upper, 1 column righ) |
 | Write a R1C1 formula, i.e. relative notation | *`Range(...).FormulaR1C1 = "=[formula]"`*  | 
@@ -137,7 +157,20 @@
 | Access to column within a range        | `With rng` `.Columns(1) ...`          |
 | Access to row within a range           | `With rng` `.Rows(1) ...`             |
 | Assign a region to a range             | `Set rng = rng0.CurrentRegion`        |
+| Assign values to a range with formula  | `Range("D12:N12").Formula = Range("D12:N12").Value` |
 | Resize range (both parameters are optional) | *`rng.Resize([RowSize], ColumnSize)`* |
+| Delete region                      | *`[range].CurrentRegion.Delete [option]`* |
+|                                        | `[option] = xlShiftToLeft, xlShiftUp` |
+| Range adaptive formula, i.e. it changes with the cell on the whole column | `range.Columns(4).Formula = "Sum(A2:C2)"` |
+| Sorting [doc](https://learn.microsoft.com/en-us/office/vba/api/excel.range.sort)| *`[range].Sort [Key1], [Order1], [Key2], [Type], [Order2], [Key3], [Order3], [Header], [OrderCustom], [MatchCase], [Orientation], [SortMethod], [DataOption1], [DataOption2], DataOpt[ion3`* |
+|   | `Columns("A:C").Sort key1:=Range("C2"), order1:=xlAscending, header:=xlYes` |
+|                                   | `.Sort oSort, xlAscending, , , , , , xlYes` |
+| Assign name (i.e. named range)         | *`[range].Name = [name]`*              |
+|                                        | `rng.Name = "data"`                    |
+| Delete name from a sheet               | *`[sheet].Names([name]).Delete`*       |
+|                                        | `Sheet1.Names("data").Delete`          |
+| Hide/Show row                          | `.EntireRow.Hidden = True` / `= False` |
+| Hide/Show column                    | `.EntireColumn.Hidden = True` / `= False` |
 
 
 | **Cells and Ranges Formatting**        |                                          |
@@ -149,15 +182,31 @@
 | Thick border                           | `.borderAround, xlThick`                 |
 | Horizontal alignment                   | `.Cells.HorizontalAlignment = xlCenter`  |
 | Border styling                        | `.Cells.Borders.LineStyle = xlContinuous` |
-| Autofit column width                   | `Cells.EntireColumnutoFit`             |
+| Autofit column width                   | `Cells.EntireColumn.AutoFit`             |
 | Delete conditional formatting          | `Range(...).FormatConditions.Delete`     |
 | Percent formatting                     | `rng = FormatPercent([val], [decimals])` |
+| Number formatting                      | *`[rng].NumberFormat = [format]`*        |
+|                                    | `Cells.EntireColumn.NumberFormat = "0.0000"` |
+|                                    | `Cells.EntireColumn.NumberFormat = "m/d/yy"` |
+|                                | `Cells.EntireColumn.NumberFormat = ""[h]:mm:ss"` |
+| Number format decimals                    | *`FormatNumber([value], [decimals])`* |
+| Add conditional formatting to range   | `rng.FormatConditions(xlExpression, xlFormula, "=B2<" & value)` |
+| Coloring with RGB (max 255)           | `rng.Interior.Color = RGB(0, 0, 0)`       |
+| Format currency with decimals         | *`FormatCurrency([value], [decimals])`*   |
+| Format number with decimals           | *`FormatNumber([value], [decimals])`*     |
+| Draw cell thick border                | *`[range].BorderAround , xlThick`*        |
+| Set bold font                         | *`[range].Cells.Font.Bold = True`*        |
+| Percentage and conditional color  | `.Cells.NumberFormat = "0.00%;[Red] -0.00%"`  |
+| Borders weight (bottom) | `Range(Cells(2, 1), Cells(1, 8)).Borders(xlEdgeBottom).Weight = xlMedium` |
+| Borders weight (right) | `Range(Cells(2, 1), Cells(8, 1)).Borders(xlEdgeRight).Weight = xlMedium` |
+
 
 
 | **Loops and Conditionals**             |                                        | 
 | ---                                    | ---                                    |
 | `For` loop (`Dim i as Integer`)        | `For i = 0 to 5 ... Next i`            |
-| `For` loop with defined step        | `For number As Double = 0 To 2 Step 0.25` |
+| `For` loop with defined step      | *`For [index] = [val] To [val] Step [val]`* |
+|                                     | `For number As Double = 0 To 2 Step 0.25` |
 | `For` loop break                       | `Exit For`                             |
 | `With` loop (`Dim r as Range : Set r = Range(...)`) | `With r ... .Cells(1, 1) = ... End With` |
 | `If` condition                       | *`If [condition] Then ... End If`*       |
@@ -178,11 +227,17 @@
 | Copy the active sheet                  | `wks.Copy, Sheets(Sheets.Count)`      |
 | Select sheet on number                 | `Sheet1.Select`                       |
 |                                        | `Sheets(1).Select`                    |
+| Worksheet name -> `str`                | *`[ws].Select`*                       |
+|                                        | `If ws.Name = Sheet1.Name Then ...`   |
+|                           | `If ActiveSheet.Name <> Sheet1.Name Then Exit Sub` |
+| Activate worksheet                     | *`[worksheet].Activate`*              |
+
 
 | **Workbook Functions**                 |                                       |
 | ---                                    | ---                                   |
 | reference to the current workbook | `ThisWorkbook`                             | 
 | iterate over all the worksheets | `For Each ws In ThisWorkbook.Worksheets ... Next ws` |
+
 
 | **Worksheet Functions**                |                                       |
 | ---                                    | ---                                   |
@@ -191,25 +246,32 @@
 | Integer random between two values      | *`.RandBetween([int], [int])`*        |
 | Count cells matchin a defined condition | *`.CountIf([range], "[condition]")`* |
 | Set zoom on active window              | `ActiveWindow.Zoom = 130`             |
-| Goal seek            | *`Range(...).GoalSeek [goal-value], [cell-to-change]`*  |
 | Calculate average value                | *`.Average([range])`*                 |
+|                                        | `.Average(Cells(5,1), Cells(1004,3))` |
 | Calculate percentile vlue              | `.Percentile([range], [val])`         |
 | Vertical lookup  | *`.VLookup([lookup-value], [table-array], [col-index-num], [range-lookup])`* |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+| Sum whole array                        | *`.Sum([array])`*                     |
+| Active window graphic properties       | `ActiveWindow.Height`                 |
+|                                        | `ActiveWindow.Width`                  |
+| Repeat string `n` times                | *`.Rept([str], [n])`*                 |
+| Max value in an range                  | *`.Max([range])`*                     |
+| Normal distribution for the specified mean and standard deviation | *`.Norm_Dist([val], [mean], [std-dev], [cumulative])`* |
+| Inverse of the normal cumulative distribution for the specified mean and standard deviation | *`.Norm_Inv([probability], [mean], [std-dev])`* |
+| the k-th percentile of values in a range, where k is in the range 0..1, exclusive | *`.Percentile_Exc([array], [k])`* |
+| Calculate median                        | *`.Median([range])`*  |
+
+
+| **Simulation Methods**                |                                       |
+| ---                                    | ---                                   |
+| Goal seek            | *`Range(...).GoalSeek [goal-value], [cell-to-change]`*  |
+| Solver OK function by displaying the dialog | *`SolverOkDialog [SetCell], [MaxMinVal], [ValueOf], [ByChange], [Engine], [EngineDesc]`*  |
+|                 | `SolverOkDialog "H6", 2, 0, "H1:H2", 1, "GRG Nonlinear"`   |
+
 
 | **Charts**                             |                                       |
 | ---                                    | ---                                   |
 | Declare and set new chart | `Dim oChart as Chart : Set oChart = Charts.Add`    |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+| Count chart objects within a worksheet | *`[worksheet].ChartObjects.Count`* |
 
 
 # Snippets
@@ -224,13 +286,51 @@ With [OBJECT]
 End With
 ```
 
-## Copy-Paste Range
+## Write Text File
 
 ```vb
-    rng.Copy
-    rng_destination.PasteSpecial xlPasteValues
+    Dim fileSystemObject As Object
+    Dim textStream As Object
+    ...
+    Set fileSystemObject = CreateObject("Scripting.FileSystemObject")
+    Set textStream = fileSystemObject.CreateTextFile([filename], True, False)
+    textStream.Write [string]
+    ...
+    textStream.Close
+    ' Clean up
+    Set fileSystemObject = Nothing
+    Set textStream = Nothing
+```
 
-    Application.CutCopyMode = False ' release the copied cells
+## Dialog for Folder Selection
+
+```vb
+    Dim folderPath As String
+    ...
+    With Application.FileDialog(msoFileDialogFolderPicker)
+        .Title = "Select Folder to Save CSV Files"
+        .AllowMultiSelect = False
+        If .Show <> -1 Then Exit Sub
+        folderPath = .SelectedItems(1)
+    End With
+```
+
+## Search Worksheet or Create It
+
+```vb
+Dim ws as Worksheet
+
+For Each ws in Worksheets
+    If ws.Name = "TargetWS" Then exists = True
+Next ws
+
+If exists = False Then
+    Set ws = Worksheeets.Add(, ActiveSheet) : ws.Name = "TargetWS"
+Else
+    Set ws = Worksheets("TargetWS")
+End If
+
+ws.Activate
 ```
 
 ## Select Case
@@ -259,33 +359,60 @@ Select Case number
 End Select
 ```
 
-## Text File
+## Define Function
 
 ```vb
-    Dim fileSystemObject As Object
-    Dim textStream As Object
+Function [funcname]([arguments])
     ...
-    Set fileSystemObject = CreateObject("Scripting.FileSystemObject")
-    Set textStream = fileSystemObject.CreateTextFile([filename], True, False)
-    textStream.Write [string]
-    ...
-    textStream.Close
-    ' Clean up
-    Set fileSystemObject = Nothing
-    Set textStream = Nothing
+    [funcname] = [value to be returned]
+End Function
 ```
 
-## Dialog for Folder Selection
+## Date
 
 ```vb
-    Dim folderPath As String
-    ...
-    With Application.FileDialog(msoFileDialogFolderPicker)
-        .Title = "Select Folder to Save CSV Files"
-        .AllowMultiSelect = False
-        If .Show <> -1 Then Exit Sub
-        folderPath = .SelectedItems(1)
-    End With
+Dim dDate as DAte
+dDate = DateSerial([year], [month], [day])
+weekday = Weekday(dDate)
+year = Year(dDate)
+```
+
+## Ranges
+
+### Copy-Paste Range
+
+```vb
+    rng.Copy
+    rng_destination.PasteSpecial xlPasteValues  ' values only
+
+    Application.CutCopyMode = False ' release the copied cells
+```
+
+
+### Set Range From Itself
+
+Set a range from itself:
+
+```vb
+Dim oRange as Range
+Set oRange = Range("B6").CurrentRegion
+
+With oRange
+    Set oRange = .Offset(1, 0).Resize(.Rows.Count-1, .Columns.Count-1)
+End With
+```
+
+### Set Range from Another Range
+
+Set a range from another range by resizing:
+
+```vb
+Dim oRange, oTable as Range
+
+Set oRange = Range("B14").CurrentRegion
+With oRange
+    Set oTable = .Offset(1, 1).Resize(.Rows.Count-1, .Columns.Count-1)
+End With
 ```
 
 ## Conditional Formatting
@@ -325,6 +452,24 @@ oBar.egativeBarFormat.BorderColorType = xlDataBarColor
 oBar.AxisPosition = xlDataBarAxisAutomatic
 oBar.BarColor.Color = 13012579
 oBar.NegativeBarFormat.Color.Color = 590255
+```
+
+### Bars
+
+```vba
+With oRange.Columns(5)
+    Dim oBar as Databar
+    .Select
+    Set oBar = Selection.FormatConditions.AddDatabar
+    oBar.MinPoint.Modify newtype:=xlConditionValueAutomaticMin
+    oBar.MaxPoint.Modify newtype:=xlConditionValueAutomaticMax
+    oBar.BarFillType = xlDataBarFillGradient
+    oBar.Direction = xlContext
+    oBar.NegativeBarFormat.ColorType = xlDataBarColor
+    oBar.BarBorder.Type = xlDataBarBorderSolid
+    oBar.NegativeBarFormat.BorderColorType = xlDataBarColor
+    oBar.AxisPosition = xlDAtaBarAxisAutomatic
+End With
 ```
 
 ## Charts
@@ -367,3 +512,5 @@ or into a `With` statement:
 With ActiveChart
     .[property] = ...
 ```
+
+
