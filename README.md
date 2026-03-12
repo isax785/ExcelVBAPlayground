@@ -1,23 +1,33 @@
 # Readme
 
-A playground focused on application to the engineering tasks in the everydai works.
+- [Readme](#readme)
+  - [MOC](#moc)
+  - [Contents](#contents)
+  - [Utilities](#utilities)
 
-The main goal is to speed-up and reduce the effort of implementations.
+---
 
-**Fields** this repo is focused on:
+A playground focused on the development of Excel applications for any type of engineering task.
+
+The main goal is to speed-up and reduce the effort of implementations, while strenghtening the development skills.
+
+## MOC
+
+- [Documentation](./doc/doc%20-%2000%20MOC.md): extensive dissertation of a specific topic.
+- [Examples](./ex/ex%20-%2000%20MOC.md): implementations (i.e. scripts) applied to real cases, ready to use or for demonstration purposes.
+- [Playground](./plg/plg%20-%2000%20MOC.md): Excel direct implementations for practicing and stranghening the development skills.
+- [Sources](./src/src%20-%2000%20MOC.md): sources and utilities.
+- [Toolboxes](./tbx/tbx%20-%2000%20MOC.md): quick reference (cheatsheet style) with reference tables and compact snippets.
+
+## Contents
+
+**Fields** this repo is focused on the implementation of:
 
 - `Excel`: formula, array formula, and other functionalities;
 - `Excel+VBA`: automation by VBA scripting;
 - `UserForm`: GUIs implementation integrating both spreadsheet and VBA functionalities.
 
-**Contents** for each field:
-
-- *example*: complete implementations applied to real cases, ready to use;
-- *playground*: implementations for practicing;
-- *documentation*: extensive dissertation of a specific topic;
-- *toolbox*: quick reference (cheatsheet style) with reference tables and compact snippets.
-
-## File Naming
+**File Naming**
 
 Files are named by well-defined prefixes to ease the search of the requested file and the identification of the field it applies to:
 
@@ -37,10 +47,14 @@ Also filetypes have dedicated prefixes depending on the field of application:
 | Playground file                           | `plg`      |
 | Toolbox                                   | `tbx`      |
 
-Prefixes are built by combinating the identifiers mentioned.
+Prefixes are built by combinating the identifiers reported in the tables above.
 
+## Utilities
 
-## Table Template
+- [ToolBox Guidelines](./src/gdl%20-%20toolbox%20guidelines.md)
+- [Folder File Index Generator](./src/build_index.py)
+
+**Table Template**
 
 | Action                                 | Code                                  |
 | ---                                    | ---                                   |

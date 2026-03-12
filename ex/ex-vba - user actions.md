@@ -1,4 +1,8 @@
-# Example: Actions
+# Example: User Actions
+
+A collection of actions done by the user in the spreadsheet.
+
+Macro is recorded while doing such actions, the code below is *the result of the recording*.
 
 ```vb
 Sub Actions()

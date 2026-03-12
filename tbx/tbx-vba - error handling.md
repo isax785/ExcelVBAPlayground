@@ -2,12 +2,12 @@
 
 | Action                                 | Code                                  |
 | ---                                    | ---                                   |
-| Switch *off error* handling (till next `On Error` statement) | `On Error 0`   |
-| Execution continues with the line following the error line | `On Error Resume Next`   |
-| Execution jumps to line starting with the specified label (+ colon) | `On Error GoTo myLabel`   |
-| Execution resumes with the statement that caused the error     | `Resume`   |
-| Execution resumes with the line following the error            | `Resume Next`   |
-| Execution resumes at the line startingg with a specified label | `Resume myLabel`   |
+| Switcher off error handling (until next _On Error_ statement)       | `On Error ()`             |
+| Execution continues with the line following the error line          | `On Error Resume Next`    |
+| Execution jumps to line starting with the specified label (+ colon) | `On Error GoTo [myLabel]` |
+| Execution resumes with the statement that caused the error          | `Resume`                  |
+| Execution resumes with the line following the error line            | `Resume Next`             |
+| Execution resumes at the line starting with a specified label       | `Resume [myLabel]`        |
 | **Error Properties** |   |
 | Number  | `Err.Number`   |
 | Description  | `Err.Description`   |
@@ -26,3 +26,8 @@ Sub AnySub()
     
 end Sub
 ```
+
+
+---
+
+[MOC](./tbx%20-%2000%20MOC.md)

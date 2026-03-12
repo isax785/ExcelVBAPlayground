@@ -33,3 +33,8 @@ End Function
 
 
 **Event Handlers** are not stored in your typical module location. They are actually stored inside either your Workbook or Worksheet object. To get to the "coding area" of either your workbook or worksheet, you simply double-click **ThisWorkbook** or the sheet name (respectively) within your desired VBA Project hierarchy tree (within the **Project Window** of your Visual Basic Editor).
+
+
+---
+
+[MOC](./tbx%20-%2000%20MOC.md)
