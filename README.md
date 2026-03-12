@@ -13,11 +13,11 @@ The main goal is to speed-up and reduce the effort of implementations, while str
 
 ## MOC
 
-- [Documentation](./doc/doc%20-%2000%20MOC.md): extensive dissertation of a specific topic.
-- [Examples](./ex/ex%20-%2000%20MOC.md): implementations (i.e. scripts) applied to real cases, ready to use or for demonstration purposes.
-- [Playground](./plg/plg%20-%2000%20MOC.md): Excel direct implementations for practicing and stranghening the development skills.
-- [Sources](./src/src%20-%2000%20MOC.md): sources and utilities.
-- [Toolboxes](./tbx/tbx%20-%2000%20MOC.md): quick reference (cheatsheet style) with reference tables and compact snippets.
+- [Documentation](./doc/doc-00_MOC.md): extensive dissertation of a specific topic.
+- [Examples](./ex/ex-00_MOC.md): implementations (i.e. scripts) applied to real cases, ready to use or for demonstration purposes.
+- [Playground](./plg/plg-00_MOC.md): Excel direct implementations for practicing and stranghening the development skills.
+- [Sources](./src/src-00_MOC.md): sources and utilities.
+- [Toolboxes](./tbx/tbx-00_MOC.md): quick reference (cheatsheet style) with reference tables and compact snippets.
 
 ## Contents
 
@@ -51,7 +51,7 @@ Prefixes are built by combinating the identifiers reported in the tables above.
 
 ## Utilities
 
-- [ToolBox Guidelines](./src/gdl%20-%20toolbox%20guidelines.md)
+- [ToolBox Guidelines](./src/src-toolbox_guidelines.md)
 - [Folder File Index Generator](./src/build_index.py)
 
 **Table Template**
