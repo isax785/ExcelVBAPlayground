@@ -1,6 +1,6 @@
-# VBA Course
+# VBA Course Overview
 
-- [VBA Course](#vba-course)
+- [VBA Course Overview](#vba-course-overview)
   - [Overview](#overview)
     - [Learning Objectives](#learning-objectives)
   - [Module 1 — Introduction to VBA Development (Environment, Inspector \& Debugging)](#module-1--introduction-to-vba-development-environment-inspector--debugging)

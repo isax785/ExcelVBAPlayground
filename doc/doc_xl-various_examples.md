@@ -3,7 +3,6 @@
 - [Excel - Various Examples](#excel---various-examples)
 - [Split Strings](#split-strings)
 - [Quadratic Regression](#quadratic-regression)
-- [Add Arrow Inside a Cell](#add-arrow-inside-a-cell)
 
 ---
 
@@ -39,11 +38,7 @@ In a similar fashion, you can split column by any other character. All you have 
 
 `=LINEST(AG8:AG16,AK8:AK16^{1,2},1,1)`
 
-![[Pasted image 20240805100906.png]]
-
-# Add Arrow Inside a Cell
-
-![add arrow to cell in excel 2013](https://cdn4syt-solveyourtech.netdna-ssl.com/wp-content/uploads/2018/09/how-insert-arrow-excel-2013-4.jpg)
+![Pasted-image](./img_md/20240805100906.png)
 
 ---
 

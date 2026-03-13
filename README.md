@@ -13,10 +13,10 @@ The main goal is to speed-up and reduce the effort of implementations, while str
 
 ## MOC
 
-- [Documentation](./doc/doc-00_MOC.md): extensive dissertation of a specific topic.
-- [Examples](./ex/ex-00_MOC.md): implementations (i.e. scripts) applied to real cases, ready to use or for demonstration purposes.
+- [Documentation](./doc/doc-00_MOC.md): extensive dissertations focusing on a specific topic.
+- [Examples](./ex/ex-00_MOC.md): implementations (i.e. scripts) applied to real cases, both ready to use or demonstration purposes.
 - [Playground](./plg/plg-00_MOC.md): Excel direct implementations for practicing and stranghening the development skills.
-- [Sources](./src/src-00_MOC.md): sources and utilities.
+- [Sources](./src/src-00_MOC.md): sources and utilities for the playground development.
 - [Toolboxes](./tbx/tbx-00_MOC.md): quick reference (cheatsheet style) with reference tables and compact snippets.
 
 ## Contents
@@ -25,7 +25,7 @@ The main goal is to speed-up and reduce the effort of implementations, while str
 
 - `Excel`: formula, array formula, and other functionalities;
 - `Excel+VBA`: automation by VBA scripting;
-- `UserForm`: GUIs implementation integrating both spreadsheet and VBA functionalities.
+- `UserForm`: GUIs implementation integrating both spreadsheets and VBA functionalities.
 
 **File Naming**
 
