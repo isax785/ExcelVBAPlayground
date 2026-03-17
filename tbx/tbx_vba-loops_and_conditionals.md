@@ -29,11 +29,25 @@
 
 ## For
 
+Syntax:
+
+```vb
+For counter [ As datatype ] = start To end [ Step step ]
+    [ statements ]
+    [ Continue For ]
+    [ statements ]
+    [ Exit For ]
+    [ statements ]
+Next [ counter ]
+```
+
 Standard: `For i = 1 To 6 ... Next i`
 
 On range of selected cells: `For Each cell In rng.Cells ... Next cell`
 
 Selected array: `For i = LBound(myArray) To UBound(myArray)`
+
+
 
 ## With
 

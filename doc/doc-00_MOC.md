@@ -18,9 +18,12 @@
 - [Error Handling](./doc_vba-error_handling.md)
 - [File Handling Guide](./doc_vba-file_handling_guide.md)
 - [Filesystem Guide](./doc_vba-filesystem_guide.md)
+- [List Object](./doc_vba-list_object_guide.md)
 - [Object Browser (Help)](./doc_vba-Object_Browser_(Help).md)
+- [Regex](./doc_vba-regex_guide.md)
 - [Shell Prompting Guide](./doc_vba-shell_prompting_guide.md)
 - [Snippets and Utilities](./doc_vba-snippets_and_utilitites.md)
+- [String Manipulation](./doc_vba-string_manipulation_guide.md)
 - [Sub and Functions](./doc_vba-sub_and_functions.md)
 
 **Excel**

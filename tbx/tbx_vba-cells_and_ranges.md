@@ -1,7 +1,6 @@
 # VBA Toolbox - Cells and Ranges Toolbox
 
 - [VBA Toolbox - Cells and Ranges Toolbox](#vba-toolbox---cells-and-ranges-toolbox)
-  - [RC Notation](#rc-notation)
   - [Names](#names)
   - [Formula](#formula)
   - [Selection](#selection)
@@ -38,6 +37,17 @@
 | cell `B2`        | `rng = Range(Cells(2, 2), Cells(5, 5)).Range("A1")` |
 | cell "named"     | `rng = Range("named")`                |
 | check empty cell | `IsEmpty(Range(...).Value)`           |
+
+**RC Notation** : To be used instead of the standard cell notation with explicit row-column naming:
+
+| The `ActiveCell` is `B11` | Result |
+|---|---|
+| `R1C1` | `A1` |
+| `RC` | `B11` |
+| `R[1]C` | `B12` |
+| `R[-1]C[-1]` | `A10` |
+| `=SUM(R2C:R[-1]C)` | `SUM(B2:B10)` |
+
 
 | **Declarations**                   |                                       |
 | ---                                    | ---                                   |
@@ -107,18 +117,6 @@
 | Percentage and conditional color  | `.Cells.NumberFormat = "0.00%;[Red] -0.00%"`  |
 | Borders weight (bottom) | `Range(Cells(2, 1), Cells(1, 8)).Borders(xlEdgeBottom).Weight = xlMedium` |
 | Borders weight (right) | `Range(Cells(2, 1), Cells(8, 1)).Borders(xlEdgeRight).Weight = xlMedium` |
-
-## RC Notation
-
-To be used instead of the standard cell notation with explicit row-column naming:
-
-| The `ActiveCell` is `B11` | Result |
-|---|---|
-| `R1C1` | `A1` |
-| `RC` | `B11` |
-| `R[1]C` | `B12` |
-| `R[-1]C[-1]` | `A10` |
-| `=SUM(R2C:R[-1]C)` | `SUM(B2:B10)` |
 
 ## Names
 
@@ -246,7 +244,7 @@ oBar.NegativeBarFormat.Color.Color = 590255
 
 ### Bars
 
-```vba
+```vb
 With oRange.Columns(5)
     Dim oBar as Databar
     .Select

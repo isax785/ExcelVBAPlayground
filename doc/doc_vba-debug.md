@@ -14,11 +14,11 @@ Select **View -> Immediate Window** to activate. Any valid expression can be eva
 
 In the window it is possible to use the _Print method_ as follows:
 
-> print [items] [;]
+> `print [items] [;]`
 
 otherwise, the _print_ command can be replaced by a question mark (_?_) as follows:
 
-> ? [item]
+> `? [item]`
 
 ## MessageBox
 
