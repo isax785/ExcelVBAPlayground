@@ -15,6 +15,7 @@
 - [Basics](./doc_vba-basics.md)
 - [Charts](./doc_vba-charts.md)
 - [Debug](./doc_vba-debug.md)
+- [Dictionaries](./doc_vba-dictionaries_guide.md)
 - [Error Handling](./doc_vba-error_handling.md)
 - [File Handling Guide](./doc_vba-file_handling_guide.md)
 - [Filesystem Guide](./doc_vba-filesystem_guide.md)

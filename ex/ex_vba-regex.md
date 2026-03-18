@@ -23,6 +23,15 @@ If by “strings like `A18370`” you mean **one uppercase letter followed by fi
 
 Below is a small, dedicated UDF (user-defined function) you can use in cells or in your VBA procedures.
 
+**Patterns**
+
+```vb
+' first letter 'A', then 1 to 10 numbers 
+    .pattern = "\bA[0-9]{1,10}\b" 
+' first any upper-case letter, then 5 numbers 
+    .Pattern = "^[A-Z][0-9]{5}$"
+```
+
 ***
 
 ## 1) Simple validator (exact match)

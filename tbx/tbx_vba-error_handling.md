@@ -8,6 +8,7 @@
 | Execution resumes with the statement that caused the error          | `Resume`                  |
 | Execution resumes with the line following the error line            | `Resume Next`             |
 | Execution resumes at the line starting with a specified label       | `Resume [myLabel]`        |
+| Raise error                            | *`Err.Raise vbObjectError + [int], , [error-message]`* |
 | **Error Properties** |   |
 | Number  | `Err.Number`   |
 | Description  | `Err.Description`   |

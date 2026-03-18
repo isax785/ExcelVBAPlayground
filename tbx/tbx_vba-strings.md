@@ -11,7 +11,10 @@
 | Reverse a string -> `str`              | *`[str_rev] = StrReverse([str])`*     |
 | Left characters                        | *`Left([str], [n_char])`*             |
 | Right characters                       | *`Right([str], [n_char])`*            |
+| Trim left, right, both-sides leading spaces | *`LTrim([string])` `RTrim([string])` `Trim([string])`* |
+| Trim with high efficiency`*` | *`Trim$([string])`* |
 
+`*` it works directly on strings instead of variants
 
 ---
 

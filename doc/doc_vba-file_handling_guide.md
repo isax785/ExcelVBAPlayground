@@ -7,6 +7,7 @@
     - [**List all files in a folder**](#list-all-files-in-a-folder)
   - [**1.2 FileLen – Get file size**](#12-filelen--get-file-size)
   - [**1.3 GetAttr – Get file/folder attributes**](#13-getattr--get-filefolder-attributes)
+  - [**1.4 Open an Excel File**](#14-open-an-excel-file)
 - [2. **Reading and Writing TEXT Files**](#2-reading-and-writing-text-files)
   - [**2.1 Write Text (Output mode)**](#21-write-text-output-mode)
   - [**2.2 Append Text**](#22-append-text)
@@ -56,7 +57,7 @@ This guide covers:
 
 ### **Check if a file exists**
 
-```vba
+```vb
 Dim path As String
 path = "C:\Data\report.txt"
 
@@ -69,7 +70,7 @@ End If
 
 ### **List all files in a folder**
 
-```vba
+```vb
 Dim file As String
 file = Dir("C:\Data\*.txt")
 
@@ -83,7 +84,7 @@ Loop
 
 ## **1.2 FileLen – Get file size**
 
-```vba
+```vb
 Dim size As Long
 size = FileLen("C:\Data\report.txt")
 Debug.Print "Size = " & size & " bytes"
@@ -93,7 +94,7 @@ Debug.Print "Size = " & size & " bytes"
 
 ## **1.3 GetAttr – Get file/folder attributes**
 
-```vba
+```vb
 Dim att As Long
 att = GetAttr("C:\Data\report.txt")
 
@@ -103,6 +104,23 @@ If att And vbDirectory Then Debug.Print "Directory"
 ```
 
 ***
+
+## **1.4 Open an Excel File**
+
+```vb
+Dim file As Variant
+Dim wbFile As Workbook, wsFile As Workbook
+
+'---------------------------------------
+' 1) Ask user for Primavera file
+'---------------------------------------
+file = Application.GetOpenFilename("Excel Files (*.xlsx;*.xlsm;*.xls),*.xlsx;*.xlsm;*.xls", _
+                                            , "Select File")
+If file = False Then Exit Sub
+Set wbFile = Workbooks.Open(file)
+Set wsFile = wbFile.Worksheets(1)
+```
+
 
 # 2. **Reading and Writing TEXT Files**
 
@@ -118,7 +136,7 @@ Excel VBA supports **three modes**:
 
 ## **2.1 Write Text (Output mode)**
 
-```vba
+```vb
 Dim f As Integer
 f = FreeFile
 
@@ -132,7 +150,7 @@ Close #f
 
 ## **2.2 Append Text**
 
-```vba
+```vb
 Dim f As Integer
 f = FreeFile
 
@@ -145,7 +163,7 @@ Close #f
 
 ## **2.3 Read Text File Line‑by‑Line (Input mode)**
 
-```vba
+```vb
 Dim f As Integer, line As String
 f = FreeFile
 
@@ -169,7 +187,7 @@ Use for images, PDFs, or any non-text content.
 
 ## **3.1 Read Entire Binary File to Byte Array**
 
-```vba
+```vb
 Dim f As Integer
 Dim bytes() As Byte
 
@@ -185,7 +203,7 @@ Close #f
 
 ## **3.2 Write Binary File from Byte Array**
 
-```vba
+```vb
 Dim f As Integer
 Dim bytes() As Byte
 ' (bytes array already populated)
@@ -202,7 +220,7 @@ Close #f
 
 A more modern and powerful abstraction.
 
-```vba
+```vb
 Dim fso As Object
 Set fso = CreateObject("Scripting.FileSystemObject")
 ```
@@ -213,7 +231,7 @@ Set fso = CreateObject("Scripting.FileSystemObject")
 
 ## **5.1 Check if file exists**
 
-```vba
+```vb
 If fso.FileExists("C:\Data\report.txt") Then
     MsgBox "Exists"
 End If
@@ -223,7 +241,7 @@ End If
 
 ## **5.2 Create a new file**
 
-```vba
+```vb
 Dim file As Object
 Set file = fso.CreateTextFile("C:\Data\newfile.txt", True)
 file.WriteLine "Hello world"
@@ -234,7 +252,7 @@ file.Close
 
 ## **5.3 Read a text file with FSO**
 
-```vba
+```vb
 Dim ts As Object
 Set ts = fso.OpenTextFile("C:\Data\report.txt", 1)
 
@@ -249,7 +267,7 @@ ts.Close
 
 ## **5.4 Copy, delete, rename**
 
-```vba
+```vb
 fso.CopyFile "C:\Data\a.txt", "C:\Backup\a.txt"
 fso.DeleteFile "C:\Data\b.txt"
 fso.MoveFile "C:\Data\oldname.txt", "C:\Data\newname.txt"
@@ -261,7 +279,7 @@ fso.MoveFile "C:\Data\oldname.txt", "C:\Data\newname.txt"
 
 ## **6.1 Check if folder exists**
 
-```vba
+```vb
 If fso.FolderExists("C:\Data") Then
     MsgBox "Folder found"
 End If
@@ -271,7 +289,7 @@ End If
 
 ## **6.2 Create folder**
 
-```vba
+```vb
 fso.CreateFolder "C:\NewFolder"
 ```
 
@@ -279,7 +297,7 @@ fso.CreateFolder "C:\NewFolder"
 
 ## **6.3 Loop through files**
 
-```vba
+```vb
 Dim folder As Object, file As Object
 Set folder = fso.GetFolder("C:\Data")
 
@@ -294,7 +312,7 @@ Next file
 
 ## **7.1 Safe‑open with error capture**
 
-```vba
+```vb
 On Error GoTo ErrHandler
 
 Dim f As Integer
@@ -319,7 +337,7 @@ ErrHandler:
 
 ## **8.1 Write an array to a CSV file**
 
-```vba
+```vb
 Sub WriteCsv()
     Dim f As Integer, r As Long, c As Long
     Dim path As String: path = "C:\Data\export.csv"
@@ -343,7 +361,7 @@ End Sub
 
 ## **8.2 Read a CSV into a dynamic array**
 
-```vba
+```vb
 Function LoadCsv(path As String) As Variant
     Dim f As Integer, txt As String
     f = FreeFile
@@ -375,7 +393,7 @@ End Function
 
 ## **8.3 Backup all Excel files in a folder**
 
-```vba
+```vb
 Sub BackupExcelFiles()
     Dim fso As Object: Set fso = CreateObject("Scripting.FileSystemObject")
     Dim src As Object: Set src = fso.GetFolder("C:\Data")
