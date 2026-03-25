@@ -20,7 +20,8 @@
 Sub AnySub()
     On Error GoTo ErrTrap
     ...
-    Exit Sub ErrTrap:
+    Exit Sub 
+    ErrTrap:
     MsgBox "Number:" & Err.Number & vbCr & _
                      "Description: "  & Err.Description & vbCr * _
                      "Source: " & Err.Source, vbCritical, "some other message"

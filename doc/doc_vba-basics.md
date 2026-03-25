@@ -115,7 +115,7 @@ Once the 'Require Variable Declaration' option is selected, the Option Explicit 
 
 A local variable with procedure scope is recognized only within the procedure in which it is declared. A local variable can be declared with a Dim or Static statement.
 
-```vbscript
+```vb
 Dim
 ```
 
@@ -123,7 +123,7 @@ When a local variable is declared with the Dim statement, the variable remains i
 
  For example, in the following sample macros, "Example1" and "Example2," the variable X is declared in each of the modules. Each variable X is independent of the other--the variable is only recognized within its respective procedure.
 
-```vbscript
+```vb
    Sub Example1()
       Dim X As Integer
       ' Local variable, not the same as X in Example2.
@@ -132,7 +132,7 @@ When a local variable is declared with the Dim statement, the variable remains i
    End Sub
 ```
 
-```vbscript
+```vb
    Sub Example2()
       Dim X As String
       ' Local variable, not the same as X in Example1.
@@ -153,7 +153,7 @@ The macro generates an untrapped run-time error.
 
 For example, in the RunningTotal example, the Accumulate variable retains its value every time it is executed. The first time the module is run, if you enter the number , the message box will display the value "2." The next time the module is run, if the value 3 is entered, the message box will display the running total value to be 5.
 
-```vbscript
+```vb
    Sub RunningTotal()
       Static Accumulate
       ' Local variable that will retain its value after the module
@@ -166,7 +166,7 @@ For example, in the RunningTotal example, the Accumulate variable retains its va
 
 ### Module scope
 
-```vbscript
+```vb
    Dim A As Integer        ' Module-level variable.
    Private B As Integer    ' Module-level variable.
 
@@ -207,7 +207,7 @@ There is no shorthand in VBA that allows to declare and assign variables simulta
 
 However, a visual thing can be obtained by using the continuation character `: ` in order to improve the readability of the code.
 
-```vbscript
+```vb
 Dim clientToTest As String:  clientToTest = clientsToTest(i)
 Dim clientString As Variant: clientString = Split(clientToTest)
 ```
@@ -216,7 +216,7 @@ Variable names can be declared in the single module (**Private**) or for the who
 
 Finally the assignment sub can be called at the beginning of the calculation macro: in this way all the variables are properly declared and defined, and their management is eased.
 
-```vbscript
+```vb
 Public a As Double
 Public b As Double
     
@@ -240,7 +240,7 @@ In VBA a normal variable can store only one value at a time.
 
  The following example shows a variable being used to store the marks of a student.
 
-```vbscript
+```vb
 ' Can only store 1 value at a time
 Dim Student1 As Integer
 Student1 = 55
@@ -269,7 +269,7 @@ Student1 = 55
 
    As you can see in the following example we are writing the same code five times – once for each student
 
-   ```vbscript
+   ```vb
    Public Sub StudentMarks()
    
        ' Get the worksheet called "Marks"
@@ -315,7 +315,7 @@ Student1 = 55
 
    The following code shows the above student example using an array
 
-   ```vbscript
+   ```vb
    ' ExcelMacroMastery.com
    ' https://excelmacromastery.com/excel-vba-array/
    ' Author: Paul Kelly
@@ -353,7 +353,7 @@ Student1 = 55
 
    Let’s have a quick comparison of variables and arrays. First we compare the declaration
 
-   ```vbscript
+   ```vb
            ' Variable
            Dim Student As Integer
            Dim Country As String
@@ -365,7 +365,7 @@ Student1 = 55
 
    Next we compare assigning a value
 
-   ```vbscript
+   ```vb
            ' assign value to variable
            Student1 = .Cells(1, 1) 
    
@@ -375,7 +375,7 @@ Student1 = 55
 
    Lastly we look at writing the values
 
-   ```vbscript
+   ```vb
            ' Print variable value
            Debug.Print Student1
    
@@ -403,7 +403,7 @@ The difference between these arrays mainly in how they are created. Accessing va
 
 A static array is declared as follows
 
-```vbscript
+```vb
    Public Sub DecArrayStatic()
 
        ' Create array with locations 0,1,2,3
@@ -434,7 +434,7 @@ As you can see the size is specified when you declare a static array. The proble
 
 The dynamic array does not have such problems. You do not specify the size when you declare it. Therefore you can then grow and shrink as required
 
-```vbscript
+```vb
    Public Sub DecArrayDynamic()
 
        ' Declare  dynamic array
@@ -457,7 +457,7 @@ The dynamic array is not allocated until you use the ReDim statement. The advant
 
    To assign values to an array you use the number of the location. You assign the value for both array types the same way.
 
-```vbscript
+```vb
    Public Sub AssignValue()
 
        ' Declare  array with locations 0,1,2,3
@@ -490,7 +490,7 @@ The dynamic array is not allocated until you use the ReDim statement. The advant
 
    There is no native function for getting the number of items in an array. I created the *ArraySize* function below to return the number of item in any array no matter how many dimensions:
 
-   ```vbscript
+   ```vb
 ' Name: ArraySize()
    ' Author: Paul Kelly, ExcelMacroMastery.com
    ' Description: Returns the number of items in an array (includes
@@ -521,7 +521,7 @@ The dynamic array is not allocated until you use the ReDim statement. The advant
 
    You can use it like this:
 
-   ```vbscript
+   ```vb
    ' Name: TEST_ArraySize
    ' Author: Paul Kelly, ExcelMacroMastery.com
    ' Description: Tests the ArraySize functions and writes
@@ -552,7 +552,7 @@ The dynamic array is not allocated until you use the ReDim statement. The advant
 
    You can use the **Array** function to populate an array with a list of items. You must declare the array as a type Variant. The following code shows you how to use this function.
 
-   ```vbscript
+   ```vb
        Dim arr1 As Variant
        arr1 = Array("Orange", "Peach","Pear")
    
@@ -573,7 +573,7 @@ The array created by the Array Function will start at index zero unless you use 
 
    The following code will split the string into an array of three elements.
 
-   ```vbscript
+   ```vb
     Dim s As String
        s = "Red,Yellow,Green,Blue"
 
@@ -604,7 +604,7 @@ The array created by the Array Function will start at index zero unless you use 
 
 The following example assigns random numbers to an array using a loop. It then prints out these numbers using a second loop.
 
-```vbscript
+```vb
    Public Sub ArrayLoops()
    
     ' Declare  array
@@ -636,7 +636,7 @@ The following example assigns random numbers to an array using a loop. It then p
 
    In the following code the value of **mark** changes but it does not change the value in the array.
 
-```vbscript
+```vb
        For Each mark In arrMarks
            ' Will not change the array value
         mark = 5 * Rnd
@@ -645,7 +645,7 @@ The following example assigns random numbers to an array using a loop. It then p
 
    The For Each is loop is fine to use for reading an array. It is neater to write especially for a[ Two-Dimensional](https://excelmacromastery.com/excel-vba-array/#Two_Dimensional_Arrays) array as we will see.
 
-```vbscript
+```vb
        Dim mark As Variant
        For Each mark In arrMarks
            Debug.Print mark
@@ -665,7 +665,7 @@ The following example assigns random numbers to an array using a loop. It then p
 
    Lets have a look an example for the static array. This example is the same as the **ArrayLoops** example in the last section with one difference – we use Erase after setting the values. When the value are printed out they will all be zero.
 
-   ```vbscript
+   ```vb
 Public Sub EraseStatic()
    
     ' Declare  array
@@ -697,7 +697,7 @@ Public Sub EraseStatic()
 
    If we try to access members of this array we will get a **“Subscript out of Range”** error.
 
-   ```vbscript
+   ```vb
    Public Sub EraseDynamic()
    
     ' Declare  array
@@ -725,7 +725,7 @@ Public Sub EraseStatic()
 
    In the following example, the second **ReDim** statement will create a completely new array. The original array and its contents will be deleted.
 
-   ```vbscript
+   ```vb
    Sub UsingRedim()
 
        Dim arr() As String
@@ -752,7 +752,7 @@ Public Sub EraseStatic()
 
    We then use **Preserve** to extend the size of the array so we don’t lose the original contents.
 
-   ```vbscript
+   ```vb
 Sub UsingRedimPreserve()
    
     Dim arr() As String
@@ -788,7 +788,7 @@ Preserve only works with the upper bound of an array.
 
 For example, if you have a 2 dimensional array you can only preserve the second dimension as this example shows:
 
-   ```vbscript
+   ```vb
    Sub Preserve2D()
 
        Dim arr() As Long
@@ -828,7 +828,7 @@ End Sub
 
    The same Preserve rules apply. We can only use Preserve on the upper bound as this example shows:
 
-   ```vbscript
+   ```vb
    Sub Preserve2DRange()
    
        Dim arr As Variant
@@ -848,7 +848,7 @@ End Sub
 
    The QuickSort function below can be used to sort an array.
 
-   ```vbscript
+   ```vb
    Sub QuickSort(arr As Variant, first As Long, last As Long)
   
      Dim vCentreVal As Variant, vTemp As Variant
@@ -895,7 +895,7 @@ End Sub
 
    You can use this function like this
 
-   ```vbscript
+   ```vb
    Sub TestSort()
    
        ' Create temp array
@@ -926,7 +926,7 @@ End Sub
 
    **Note:** When you use an array as a parameter it cannot use ByVal, it must use ByRef. You can pass the array using ByVal making the parameter a variant.
 
-   ```vbscript
+   ```vb
    ' Passes array to a Function
 Public Sub PassToProc()
        Dim arr(0 To 5) As String
@@ -953,7 +953,7 @@ End Function
 
 The following examples show this
 
-   ```vbscript
+   ```vb
 Public Sub TestArray()
    
     ' Declare dynamic array - not allocated
@@ -996,13 +996,13 @@ Public Sub TestArray()
 
 You declare a 2 dimensional array as follows
 
-   ```vbscript
+   ```vb
    Dim ArrayMarks(0 To 2,0 To 3) As Long
    ```
 
 The following example creates a random value for each item in the array and the prints the values to the Immediate Window.
 
-   ```vbscript
+   ```vb
    Public Sub TwoDimArray()
    
     ' Declare a two dimensional array
@@ -1070,7 +1070,7 @@ Using a For Each is neater to use when reading from an array.
 
 Let’s take the code from above that writes out the two-dimensional array
 
-```vbscript
+```vb
        ' Using For loop needs two loops
        Debug.Print "i", "j", "Value"
     For i = LBound(arrMarks) To UBound(arrMarks)
@@ -1082,7 +1082,7 @@ Let’s take the code from above that writes out the two-dimensional array
 
 Now let’s rewrite it using a For each loop. You can see we only need one loop and so it is much easier to write
 
-   ```vbscript
+   ```vb
        ' Using For Each requires only one loop
        Debug.Print "Value"
        Dim mark As Variant
@@ -1098,7 +1098,7 @@ Using the For Each loop gives us the array in one order only – from LBound to 
 
    If you have read my previous post on [Cells and Ranges](https://excelmacromastery.com/excel-vba-range-cells/) then you will know that VBA has an extremely efficient way of reading from a Range of Cells to an Array and vice versa
 
-```vbscript
+```vb
    Public Sub ReadToArray()
    
        ' Declare dynamic array
@@ -1121,7 +1121,7 @@ Using the For Each loop gives us the array in one order only – from LBound to 
 
    The next example will read the sample student data below from C3:E6 of Sheet1 and print them to the Immediate Window.
 
-   ```vbscript
+   ```vb
    Public Sub ReadAndDisplay()
    
     ' Get Range
@@ -1207,7 +1207,7 @@ In the last section, you saw how we can easily read from a group of cells to an 
 
 For example, the following code would be much faster than the code below it
 
-   ```vbscript
+   ```vb
 Public Sub ReadToArray()
    
     ' Read values into array from first row
@@ -1230,7 +1230,7 @@ Public Sub ReadToArray()
 ​    
 
 
-   ```vbscript
+   ```vb
    Sub UsingCellsToUpdate()
        
        Dim c As Variant
@@ -1245,7 +1245,7 @@ End Sub
 
    Assigning from one set of cells to another is also much faster than using Copy and Paste
 
-   ```vbscript
+   ```vb
    ' Assigning - this is faster
    Range("A1:A10").Value = Range("B1:B10").Value
    
@@ -1288,7 +1288,7 @@ End Sub
 
 Create a new sheet and assign to its cell the cell of another one.
 
-```vbscript
+```vb
 Sub Nuovo_foglio()
 ' Creazione di un nuovo foglio e assegnazione alla cella A1 di Foglio1!A1 
     Sheets.Add After:=ActiveSheet
@@ -1303,7 +1303,7 @@ End Sub
 
 Assign a new name to the selected sheet.
 
-```vbscript
+```vb
 Sub Rinomina_foglio()
 ' Assegna un nuovo nome al Foglio1
     Sheets("Foglio1").Select
@@ -1315,7 +1315,7 @@ End Sub
 
 Assign to a cell the **value** of another one with relative reference notation.
 
-```vbscript
+```vb
 Sub Assegna_val_cella()
 ' Assegnazione di valori alle celle con posizioni basate su SDR relativo
     Range("H6").Select
@@ -1342,7 +1342,7 @@ End Sub
 
 Assign a **formula** to a cell.
 
-```vbscript
+```vb
 Sub Se()
 ' Funzione SE assegnata ad una cella
     ActiveCell.FormulaR1C1 = "=IF(RC[-3]=FALSE,0,1)"
@@ -1352,7 +1352,7 @@ End Sub
 
 Write some **text** in a cell.
 
-```vbscript
+```vb
 Sub Scrivi_testo()
 ' Inserisci testo in una cella
     Range("I7").Select
@@ -1363,7 +1363,7 @@ End Sub
 
 Appearance **formatting**.
 
-```vbscript
+```vb
 Sub Bordo_cella()
 ' Formattazione celle con i bordi
 'Thin border
@@ -1430,7 +1430,7 @@ End Sub
 
 **Merge cells**.
 
-```vbscript
+```vb
 Sub Unisci_celle()
 ' Selezione e unione di due celle
     Range("H6:I6").Select
@@ -1453,7 +1453,7 @@ End Sub
 
 Three different ways to set in the cell **D4** the formula that takes the contents of **B4** as input.
 
-```vbscript
+```vb
 Range("D4").Formula = "=B3*10" 'cell name B3
 
 Range("D4").FormulaR1C1 = "=R3C2*10" 'absolute coordinates R3C2 (i.e. B3)
@@ -1463,13 +1463,13 @@ Range("D4").FormulaR1C1 = "=R[-1]C[-2]*10" 'relative coordinates respect to the 
 
 The same result can be achieved referring to the cell **D4** by using its coordinates.
 
-```vbscript
+```vb
 Cells(4,4).FormulaR1C1 = "=R[-1]C[-2]*10"
 ```
 
 Also a range of cells can be selected, and the _.FormulaR1C1_ can be used.
 
-```vbscript
+```vb
 Range("A1:C4").Select
 'or
 Range(Cells(1,1),Cells(4,4)).Select
@@ -1486,7 +1486,7 @@ Range(Cells(1,1),Cells(4,4)).FormulaR1C1 = "=R[3]C[3]*10"
 
 In order to span among all the cells by starting from a specific one, the _.Offset_ property can be used. The cell **D4** can thus be selected starting from the cell **A1** in these two ways, then the formula can be set in the selection. Otherwise one commad only ca be used.
 
-```vbscript
+```vb
 Range("A1").Offset(3,3).Select
 'or
 Cells(1,1).Offset(3,3).Select
@@ -1523,7 +1523,7 @@ Cells(1,1).Offset(3,3).FormulaR1C1 = "=R[-1]C[-2]*10"
 
 ### 1D
 
-```vbscript
+```vb
 Dim Films(1 To 5) As String
 
 Films(1) = "Lord of the Rings"
@@ -1537,7 +1537,7 @@ MsgBox Films(4)
 
 ### 2D
 
-```vbscript
+```vb
 Dim Films(1 To 5, 1 To 2) As String
 Dim i As Integer, j As Integer
 
@@ -1554,7 +1554,7 @@ MsgBox Films(4, 2)
 
 Change the size of an existing array by using **ReDim** command. 
 
-```vbscript
+```vb
 Public Sub DecArrayDynamic()
 
     ' Declare  dynamic array
@@ -1578,7 +1578,7 @@ We cannot Preserve from (0 to 2) to (1 to 3) or (2 to 10) as they are different 
 
 We cannot Preserve from (0 to 2) to (0 to 1) or (0) as they are smaller than original array.
 
-```vbscript
+```vb
 Sub UsingRedimPreserve()
 
     Dim arr() As String
@@ -1599,7 +1599,7 @@ Preserve only works with the upper bound of an array.
 
 For example, if you have a 2 dimensional array you can only preserve the second dimension as this example shows:
 
-```vbscript
+```vb
 Sub Preserve2D()
 
     Dim arr() As Long
@@ -1617,7 +1617,7 @@ If we try to use Preserve on a lower bound we will get the “Subscript out of r
 
 In the following code we use Preserve on the lower bound. Running this code will give the “Subscript out of range” error:
 
-```vbscript
+```vb
 Sub Preserve2DError()
 
     Dim arr() As Long
@@ -1635,7 +1635,7 @@ When we read from a range to an array, it automatically creates a two dimensiona
 
 The same Preserve rules apply. We can only use Preserve on the upper bound as this example shows:
 
-```vbscript
+```vb
 Sub Preserve2DRange()
 
     Dim arr As Variant
@@ -1653,7 +1653,7 @@ End Sub
 
 _For_ loop.
 
-```vbscript
+```vb
 Public Sub ArrayLoops()
 
     ' Declare  array
@@ -1676,7 +1676,7 @@ End Sub
 
 _For Each_ loop.
 
-```vbscript
+```vb
 For Each mark In arrMarks
     ' Will not change the array value
     mark = 5 * Rnd
@@ -1692,7 +1692,7 @@ Next mark
 
 _Static_
 
-```vbscript
+```vb
 Public Sub EraseStatic()
 
     ' Declare  array
@@ -1718,7 +1718,7 @@ End Sub
 
 _Dynamic_
 
-```vbscript
+```vb
 Public Sub EraseDynamic()
 
     ' Declare  array
@@ -1749,7 +1749,7 @@ Therefore, if you wish to perform a task that returns a result (e.g. summing of 
 
 VBA procedures can be passed data via *arguments*, which are declared in the procedure definition. For example, you could have a VBA Sub procedure that adds an Integer to every cell in the current selected range on a worksheet. You could supply the value of the integer to the Sub via an argument, as follows:
 
-```vbscript
+```vb
 Sub AddToCells(i As Integer)
 	.
     .
@@ -1790,7 +1790,7 @@ Before discussing further properties of VBA Function and Sub procedures, it is u
 
 The VBA editor recognises a Function procedure, because the commands are positioned between the following start and end commands:
 
-```vbscript
+```vb
 Function
     'your code here
 End Function
@@ -1807,7 +1807,7 @@ _** VBA Function Procedure Example: Perform a Mathematical Operation on 3 Number
 
 The following code shows an example of a simple VBA Function procedure that receives three arguments, each of which are 'Doubles' (double precision floating point numbers). The Function returns a further 'Double', which is the sum of the first two arguments, minus the third argument:
 
-```vbscript
+```vb
 ' Function to Add Two Numbers and Then Subtract a Third Number
 Function SumMinus(dNum1 As Double, dNum2 As Double, dNum3 As Double) As Double
 	SumMinus = dNum1 + dNum2 - dNum3
@@ -1826,7 +1826,7 @@ _**Calling a VBA Function Procedure From Within VBA**_
 
 You can call a Function procedure from within your VBA program by simply assigning the Function to a variable. The following example shows a call to the simple SumMinus function that was defined above:
 
-```vbscript
+```vb
 Sub main()
     Dim total as Double
     total = SumMinus(5, 4, 3)
@@ -1845,7 +1845,7 @@ _=SumMinus(10, 5, 2)_
 
 The VBA editor recognises a Sub procedure, because the commands are positioned between the following start and end commands: 
 
-```vbscript
+```vb
 Sub
 .
 .
@@ -1857,7 +1857,7 @@ End Sub
 
 The following code shows an example of a simple VBA Sub procedure that applies formatting to the current selected cell range. The cells are formatted to be aligned centrally (both horizontally and vertically) and to have a user-supplied font size:
 
-```vbscript
+```vb
 ' Sub Procedure to Center and Apply a Supplied Font Size to the Selected Range
 Sub Format_Centered_And_Sized(Optional iFontSize As Integer = 10)
     Selection.HorizontalAlignment = xlCenter
@@ -1874,7 +1874,7 @@ _**VBA Sub Procedure Example 2: Center and Apply Bold Font to a Selected Range o
 
 The following code is similar to example 1, but instead of supplying a font size to the selected range, the cells are set to have a bold font. This example has been included to show a Sub procedure that does not receive any arguments:
 
-```vbscript
+```vb
 ' Sub Procedure to Center and Bold the Selected Range
 Sub Format_Centered_And_Bold()
     Selection.HorizontalAlignment = xlCenter
@@ -1889,7 +1889,7 @@ _**Calling a VBA Sub Procedure From Within VBA**_
 
 You can call a VBA Sub procedure from your VBA program by typing the Callkeyword, followed by the Sub name and then the Sub procedure arguments enclosed in brackets. This is shown in the example below:
 
-```vbscript
+```vb
 Sub main()
 	Call Format_Centered_And_Sized( 20 )
 End Sub
@@ -1897,7 +1897,7 @@ End Sub
 
 If the Format_Centered_And_Sized Sub procedure had more than one argument, these would be separated by commas. E.g. 
 
-```vbscript
+```vb
 Sub main()
 	Call Format_Centered_And_Sized( arg1, arg2, ... )
 End Sub
@@ -1933,7 +1933,7 @@ These scpe keywords have the same meaning for variables when applied to VBA proc
 
 If you want to exit a VBA Function or Sub procedure before it has run to the end, you can do this using the Exit Function or the Exit Sub command. This is illustrated below, in a simple Function procedure that expects to receive a positive value to work with. If the value received is not positive, the function cannot continue, so it highlights the error to the user and exits the procedure immediately:
 
-```vbscript
+```vb
 Function VAT_Amount(sVAT_Rate As Single) As Single
     VAT_Amount = 0
     If sVAT_Rate <= 0 Then
@@ -1954,7 +1954,7 @@ The easiest way to think of a sub vs a function is that a function can return a 
 
 A function is similar similar to a sub, except that a function can return a value.  It may be easier to think of a function as similar to a formula in excel.  You can provide the function the necessary inputs and the function returns the desired value.  **You can build a custom function for just about any action and then access that function from either a call from a macro, or a direct reference from a cell.**
 
-```vbscript
+```vb
 Public Function LastDayofMonth(myDate As Date)
 
     Dim tempDate As String
@@ -1979,7 +1979,7 @@ End Function
 
 The below VBA code shows ways you can **create various types** of named ranges. 
 
-```vbscript
+```vb
 Sub NameRange_Add()
 'PURPOSE: Various ways to create a Named Range
 'SOURCE: www.TheSpreadsheetGuru.com
@@ -2025,7 +2025,7 @@ End Sub
 
 This VBA macro code shows how you can **cycle through the named ranges** within your spreadsheet. 
 
-```vbscript
+```vb
 Sub NamedRange_Loop()
 'PURPOSE: Delete all Named Ranges in the Active Workbook
 'SOURCE: www.TheSpreadsheetGuru.com
@@ -2047,7 +2047,7 @@ End Sub
 
 If you need to clean up a bunch of junk named ranges, this VBA code will let you do it. 
 
-```vbscript
+```vb
 Sub NamedRange_DeleteAll()
 'PURPOSE: Delete all Named Ranges in the ActiveWorkbook (Print Areas optional)
 'SOURCE: www.TheSpreadsheetGuru.com
@@ -2089,7 +2089,7 @@ End Sub
 
 This VBA code will delete only Named Ranges with errors in them. These errors can be caused by worksheets being deleted or rows/columns being deleted. 
 
-```vbscript
+```vb
 Sub NamedRange_DeleteErrors()
 'PURPOSE: Delete all Named Ranges with #REF error in the ActiveWorkbook
 'SOURCE: www.TheSpreadsheetGuru.com
@@ -2211,7 +2211,7 @@ This method is more suitable for exiting the program gracefully if any fatal err
 
 Below is a self-explanatory example of ‘On Error Goto<label>:’ where I have used the label name as ‘Error_handler’.
 
-```vbscript
+```vb
 Sub GetErr() 
 	On Error GoToError_handler:  
 	N = 1 / 0    ' cause an error  
@@ -2373,7 +2373,7 @@ You can download an [example workbook here.](http://www.cpearson.com/Zips/TimeBo
 
 This procedure, TimeBombWithDefinedName, uses a hidden defined name to store the expiration date. The first time the workbook is opened, that defined name will not exist and will be created by the code. (Be sure that you delete this name when you are done with your own development work on the workbook.) When the defined name is created, it uses the C_NUM_DAYS_UNTIL_EXPIRATION constant to calculate the expiration date. When workbook is opened after the first time, the code reads the name ExpirationDate and tests that value against the current date.
 
-```vbscript
+```vb
 Sub TimeBombWithDefinedName()
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ' TimeBombWithDefinedName
@@ -2417,7 +2417,7 @@ CAUTION: This code will **permanently** delete (not Recycle) the workbook that c
 
 However you store and calculate the expiration date, you can use the code below to delete the workbook containing the code.
 
-```vbscript
+```vb
 Sub CommintSuicide()
     With ThisWorkbook
         Application.DisplayAlerts = False
@@ -2434,7 +2434,7 @@ End Sub
 
 This procedure, TimeBombMakeReadOnly, uses a defined name, just as the previous procedure did, but rather than closing the workbook, it makes the workbook read-only.
 
-```vbscript
+```vb
 Sub TimeBombMakeReadOnly()
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ' TimeBombMakeReadOnly
@@ -2481,7 +2481,7 @@ End Sub
 
 This procedure, TimeBombWithRegistry, stores the expiration date in the System Registry. To use this code, you must include the modRegistry code module, avaiable on the [System Registry page](http://www.cpearson.com/excel/Registry.htm), or use the RegistryWorx.dll available on the [RegistryWorx](http://www.cpearson.com/excel/RegistryWorx.aspx) page. If you use the modRegistry module, you will also need to include the modGetSystemErrorMessageText, available [here](http://www.cpearson.com/Zips/modGetSystemErrorMessageText.zip). The modRegistry module and the modGetSystemErrorMessageText modules are included in the [downloadable example workbook](http://www.cpearson.com/Zips/TimeBomb.zip).
 
-```vbscript
+```vb
 Sub TimeBombWithRegistry()
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ' TimeBombWithRegistry
@@ -2558,7 +2558,7 @@ End Sub
 
 Regardless of which procedure you use to limit usage of the workbook, you should call that procedure for the Workbook_Open event procedure in the ThisWorkbook code module:
 
-```vbscript
+```vb
 Private Sub Workbook_Open()
     TimeBombWithRegistry
 End Sub

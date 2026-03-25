@@ -6,8 +6,10 @@
 
 - [Chart](./ex_vba-chart.md)
 - [Export CSV](./ex_vba-export_csv.md)
+- [Logs](./ex_vba-logs.md)
 - [Regex](./ex_vba-regex.md)
 - [User Actionss](./ex_vba-user_actions.md)
+
 
 
 ---

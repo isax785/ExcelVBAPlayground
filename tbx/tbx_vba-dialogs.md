@@ -9,7 +9,7 @@
 
 | **MessageBox**                         |                                       |
 | ---                                    | ---                                   |
-| Open messagebox                        | *`MsgBox("[message]", [button-set], [box-title])`* |
+| Open messagebox                        | *`MsgBox "[message]", [button-set], [box-title]`* |
 | Messagebox button set                  | `vbOkCancel`, `vbYesNoCancel`, `vbYesNo` |
 | Buttons signals                        | `vbOK`, `vbCancel`, `vbYes`, `vbNo`   |
 | Conditional | *`If MsgBox("[message]", [button-set]) = [signal] Then [action] `* |

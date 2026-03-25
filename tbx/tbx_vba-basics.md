@@ -19,14 +19,14 @@
 | Quotient -> `int`        | *`.Formula="=QUOTIENT([numerator], [denominator])"`* |
 | Separator to write code on multiple lines | `_`                                 |
 | Difference operator                    | `<>`                                   |
-| Comments                        | `' comments are preceded by an apostrophe`   |
+| Comments                         | `' comments are preceded by an apostrophe`   |
 
 
 | **Keywords**                           |                                        |
 | ---                                    | ---                                    |
 | Random value in the `[0,1]` range, `0` and `1` included     | `Rnd`             |
 | Timer counting **seconds** since the midnight of the machine | `Timer`          |
-| Newline keyword for string             | `vbcr`                                 |
+| Newline keyword for string             | `vbCr`                                 |
 | Tab keyword for string                 | `vbTab`                                |
 | Prevention of system blocking (inside a loop) | `DoEvents`                      |
 | Break loop                             | *`Exit [loop]`*                        |
@@ -58,7 +58,10 @@
 | ilnline variable declaration and assignment | *`Dim [varName] As Integer: [varName] = value`* |
 | multiple types inline decalaration     | `Dim a As Single, b As Integer`       |
 | multiple single type inline declaration   | `Dim a, b, c As Double`            |
-
+| Variant: can store anything            | *`Dim [name] as Variant`*             |
+| Inline declarations, single type       | *`Dim [varname] as [vartype]`*        |
+| Inline declaration and assignment      | *`Dim [varname] as [vartype] : [varname] = [value]`*   |
+| Inline declarations, multiple types    | *`Dim [varname] as [vartype], [varname] as [vartype]`* |
 # Snippets
 
 ## Define Function
