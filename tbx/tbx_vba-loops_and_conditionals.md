@@ -18,6 +18,7 @@
 | `For` loop break                       | `Exit For`                             |
 | `With` loop (`Dim r as Range : Set r = Range(...)`) | `With r ... .Cells(1, 1) = ... End With` |
 | `If` condition                       | *`If [condition] Then ... End If`*       |
+| `If` **negated** condition           | *`If not [condition] Then ... End If`*   |
 | `If ... Else` condition           | *`If [condition] Then ... Else ... End If`* |
 | `If ... ElseIf ... Else` condition | *`If [condition] Then ... ElseIf [condition] Then ... Else ... End If`* |
 | Inline conditional assignment          | *`i = IIF([condition], [true-return], [false-return])`*             |

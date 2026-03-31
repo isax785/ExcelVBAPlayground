@@ -21,22 +21,24 @@
 | Action           | Code                                  |
 | ---              | ---                                   |
 | Declare range    | `Dim rng as Range`                    |
-| cell `A1`        | `rng = Range("A1")`                   |
-| cell `A1:A7`     | `rng = Range("A1:A7")`                |
-| cell `A1 + A5`   | `rng = Range("A1,A5")`                |
-| cell `A1:A5`     | `rng = Range("A1","A5")`              |
-| cell `A1`        | `rng = Cells(1, 1)`                   |
-| cell `B5`        | `rng = Cells(5, 2)`                   |
-| cell `All Cells` | `rng = Cells()`                       |
-| cell `A1`        | `rng = Range("A1:A5").Cells(1, 1)`    |
-| cell `B1`        | `rng = Range("B1:C5").Cells(1, 1)`    |
-| cell `A5`        | `rng = Range("A1:A5").Cells(5, 1)`    |
-| cell `A6`        | `rng = Range("A5").Range("A2") [OR: Offset(1,0)]` |
-| cell `A1:A5`     | `rng = Range(Cells(1, 1), Cells(5, 1))` |
-| cell `A1:C5`     | `rng = Range(Cells(1, 1), Cells(5, 3)`  |
-| cell `B2`        | `rng = Range(Cells(2, 2), Cells(5, 5)).Range("A1")` |
-| cell "named"     | `rng = Range("named")`                |
-| check empty cell | `IsEmpty(Range(...).Value)`           |
+| Cell `A1`        | `rng = Range("A1")`                   |
+| Cell `A1:A7`     | `rng = Range("A1:A7")`                |
+| Cell `A1 + A5`   | `rng = Range("A1,A5")`                |
+| Cell `A1:A5`     | `rng = Range("A1","A5")`              |
+| Cell `A1`        | `rng = Cells(1, 1)`                   |
+| Cell `B5`        | `rng = Cells(5, 2)`                   |
+| Cell `All Cells` | `rng = Cells()`                       |
+| Cell `A1`        | `rng = Range("A1:A5").Cells(1, 1)`    |
+| Cell `B1`        | `rng = Range("B1:C5").Cells(1, 1)`    |
+| Cell `A5`        | `rng = Range("A1:A5").Cells(5, 1)`    |
+| Cell `A6`        | `rng = Range("A5").Range("A2") [OR: Offset(1,0)]` |
+| Cell `A1:A5`     | `rng = Range(Cells(1, 1), Cells(5, 1))` |
+| Cell `A1:C5`     | `rng = Range(Cells(1, 1), Cells(5, 3)`  |
+| Cell `B2`        | `rng = Range(Cells(2, 2), Cells(5, 5)).Range("A1")` |
+| Cell "named"     | `rng = Range("named")`                |
+| Check empty cell | `IsEmpty(Range(...).Value)`           |
+| Column `A`       | `rng = Range("A:A")`                  |
+| Row nr 1         | `rng = Range("1:1")`                  |
 
 **RC Notation** : To be used instead of the standard cell notation with explicit row-column naming:
 
@@ -79,7 +81,7 @@
 | Delete region                      | *`[range].CurrentRegion.Delete [option]`* |
 |                                        | `[option] = xlShiftToLeft, xlShiftUp` |
 | Range adaptive formula, i.e. it changes with the cell on the whole column | `range.Columns(4).Formula = "Sum(A2:C2)"` |
-| Sorting [doc](https://learn.microsoft.com/en-us/office/vba/api/excel.range.sort)| *`[range].Sort [Key1], [Order1], [Key2], [Type], [Order2], [Key3], [Order3], [Header], [OrderCustom], [MatchCase], [Orientation], [SortMethod], [DataOption1], [DataOption2], DataOpt[ion3`* |
+| Sorting ([doc](https://learn.microsoft.com/en-us/office/vba/api/excel.range.sort))| *`[range].Sort [Key1], [Order1], [Key2], [Type], [Order2], [Key3], [Order3], [Header], [OrderCustom], [MatchCase], [Orientation], [SortMethod], [DataOption1], [DataOption2], DataOpt[ion3`* |
 |   | `Columns("A:C").Sort key1:=Range("C2"), order1:=xlAscending, header:=xlYes` |
 |                                   | `.Sort oSort, xlAscending, , , , , , xlYes` |
 | Assign name (i.e. named range)         | *`[range].Name = [name]`*              |
@@ -117,6 +119,7 @@
 | Percentage and conditional color  | `.Cells.NumberFormat = "0.00%;[Red] -0.00%"`  |
 | Borders weight (bottom) | `Range(Cells(2, 1), Cells(1, 8)).Borders(xlEdgeBottom).Weight = xlMedium` |
 | Borders weight (right) | `Range(Cells(2, 1), Cells(8, 1)).Borders(xlEdgeRight).Weight = xlMedium` |
+| Bold font                             | `Range(...).Font.Bold = True`             |
 
 ## Names
 

@@ -34,18 +34,18 @@ where:
 
 - _buttons_ are the **constants** of the argument that allow to choose the type of message box:
 
-  | Constant | Value | Description |
-  | -------- | :---: | ----------- |
-  |vbOKOnly|0|_ok_ button|
-  |VbOKCancel|1|_ok_ and _cancel_ buttons|
-  |VbAbortRetryIgnore|2|_cancel_, _retry_ and _ignore_ buttons|
-  |VbYesNoCancel|3|_yes_, _no_ and _cancel_ buttons|
-  |VbYesNo|4| _yes_ and _no_ buttons |
-  |VbRetryCancel|5| _retry_ and _cancel_ buttons |
-  |VbCritical|16| critical message |
-  |VbQuestion|32| reboot request |
-  |VbExclamation|48| advising message |
-  |VbInformation|64| information message |
+  | Constant         | Value | Description |
+  | --------         | :---: | ----------- |
+  |vbOKOnly          | 0     |_ok_ button  |
+  |VbOKCancel        | 1     |_ok_ and _cancel_ buttons  |
+  |VbAbortRetryIgnore| 2     |_cancel_, _retry_ and _ignore_ buttons |
+  |VbYesNoCancel     | 3     |_yes_, _no_ and _cancel_ buttons |
+  |VbYesNo           | 4     | _yes_ and _no_ buttons |
+  |VbRetryCancel     | 5     | _retry_ and _cancel_ buttons |
+  |VbCritical        | 16    | critical message |
+  |VbQuestion        | 32    | reboot request |
+  |VbExclamation     | 48    | advising message |
+  |VbInformation     | 64    | information message |
 
   When a **constant** is used, the instruction can be assigned to a variable (that must be declared as String or  Variant (Dim) depending on the output of the function). The instruction will be
 

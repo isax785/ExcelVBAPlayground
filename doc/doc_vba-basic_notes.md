@@ -268,6 +268,15 @@ Worksheets(2).Cells(a, 15).PasteSpecial Paste:=xlPasteFormats
 Worksheets(2).Cells(a, 15).PasteSpecial Paste:=xlPasteValues
 ```
 
+Copy-paste a `Range`:
+
+```vb
+    With sheet1 Set Range1 = .range(“C3:E12”) End With
+    With sheet1 Set Range2 = .range(“J3:L12”) End With
+    Range1.copy
+    Range2. Pastespecial
+```
+
 Three Methods to Copy & Paste with VBA, source: https://www.excelcampus.com/vba/copy-paste-cells-vba-macros/
 
 ```vb
