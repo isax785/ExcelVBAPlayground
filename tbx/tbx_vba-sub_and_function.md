@@ -24,6 +24,17 @@ Function calc_sum(a as Integer, b as Integer) as Integer
 End Function
 ```
 
+Functions with default values (`Optional` must be provided after mandatory arguments):
+
+```vb
+Function calc_sum_with_default(a as Integer, _
+                               Optional b as Integer = 0) _
+                               as Integer
+    calc_sum = a + b
+End Function
+```
+
+
 ## Sub
 
 > Syntax:  
@@ -33,6 +44,9 @@ End Function
 
 
 **Event Handlers** are not stored in your typical module location. They are actually stored inside either your Workbook or Worksheet object. To get to the "coding area" of either your workbook or worksheet, you simply double-click **ThisWorkbook** or the sheet name (respectively) within your desired VBA Project hierarchy tree (within the **Project Window** of your Visual Basic Editor).
+
+
+
 
 
 ---

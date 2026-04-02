@@ -73,7 +73,7 @@ End Function
 
 # 1. Check if a row contains **all strings** (default behavior)
 
-```vba
+```vb
 Dim terms As Variant
 terms = Array("Pressure", "Temperature", "Flow")
 
@@ -86,7 +86,7 @@ End If
 
 # 2. Check if a row contains **any** of the strings
 
-```vba
+```vb
 If RowContainsStrings(Rows(5), terms, requireAll:=False) Then
     MsgBox "At least one term found"
 End If
@@ -96,7 +96,7 @@ End If
 
 # 3. Exact, case‑sensitive match
 
-```vba
+```vb
 If RowContainsStrings(Rows(5), terms, True, False, True) Then
     MsgBox "Exact, case-sensitive match"
 End If
